@@ -888,7 +888,7 @@ font-size: 12px;
 }
 ```
 
-# 行高的测量
+# 行高的测量和用法
 
 <img src="media/line1.png"  />
 
@@ -900,7 +900,9 @@ font-size: 12px;
 
 这里情况些许复杂，开始学习，我们可以先从简单地方入手学会。
 
+### 行高用法
 
+行高等于盒子高度相当于文字居中,小于偏上,大于偏下
 
 <img src="media/1.png"  />
 
@@ -911,6 +913,8 @@ font-size: 12px;
 如果行高 大于 高度   文字会 偏下 
 
 如果行高小于高度   文字会  偏上 
+
+
 
 # CSS 三大特性
 
@@ -1292,7 +1296,6 @@ double：边框为双实线
 		border-right: 5px solid pink;
 		
 		border: 1px solid red;
-
 
 ### 表格的细线边框
 
