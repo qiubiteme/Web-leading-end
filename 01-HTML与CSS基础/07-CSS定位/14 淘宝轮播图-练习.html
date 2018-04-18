@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tb {
+            width: 520px;
+            height: 280px;
+            margin: auto;
+            position: relative;
+        }
+
+        .tb a {
+            width: 24px;
+            height: 36px;
+            display: block;
+            position: absolute;
+            top: 50%;
+            margin-top: -18px;
+        }
+
+        .left {
+            left: 0px;
+            background: url(images/left.png) no-repeat;
+        }
+
+        .right {
+            right: 0px;
+            background: url(images/right.png) no-repeat;
+        }
+
+        .tb ul {
+            width: 70px;
+            height: 13px;
+            background-color: rgba(225, 225, 225, 0.3);
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            margin-left: -35px;
+            border-radius: 8px;
+        }
+        .tb ul li{
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            float: left;
+            margin: 3px;
+            border-radius: 50%;
+        }
+        .tb .current {
+            background-color: #f40;
+        }
+    </style>
+</head>
+<body>
+<div class="tb">
+    <img src="images/tb.jpg">
+    <a href="#" class="left"></a>
+    <a href="#" class="right"></a>
+    <ul>
+        <li class="current"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</div>
+</body>
+</html>
