@@ -2323,7 +2323,7 @@ vertical-align 不影响块级元素中的内容对齐，它只针对于 行内�
 
 解决的方法就是：  
 
-1. 给img vertical-align:middle | top等等。  让图片不要和基线对齐。<img src="media/1633.png"  width="500"  style="border: 1px dashed #ccc;" />
+1. 给img vertical-align:middle | top | bottom等等。  让图片不要和基线对齐。<img src="media/1633.png"  width="500"  style="border: 1px dashed #ccc;" />
 
 
 1. 给img 添加 display：block; 转换为块级元素就不会存在问题了。<img src="media/sina1.png" width="500" style="border: 1px dashed #ccc;"/>
