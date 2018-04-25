@@ -16,6 +16,17 @@
 .fl {
     float: left;
 }
+/*字体图标的引入*/
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?axvffw');
+    src:  url('../fonts/icomoon.eot?axvffw#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?axvffw') format('truetype'),
+    url('../fonts/icomoon.woff?axvffw') format('woff'),
+    url('../fonts/icomoon.svg?axvffw#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 /*京东顶部开始*/
 .j-event{
     height: 80px;
@@ -25,4 +36,18 @@
     height: 80px;
     display: block;
     background: url(../images/top.jpg) no-repeat;
+    position: relative;
+}
+.j-event a i{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-family: icomoon;
+    font-style: normal;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
 }
