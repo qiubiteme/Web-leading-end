@@ -6,6 +6,9 @@
 */
 /* 版心 */
 /* 版心 */
+body{
+    background-color: #F6F6F6;
+}
 .w {
     width: 1190px;
     margin: auto;
