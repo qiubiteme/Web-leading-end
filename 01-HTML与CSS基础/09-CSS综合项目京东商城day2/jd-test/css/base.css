@@ -160,7 +160,7 @@ a {
 
 .inner {
     height: 140px;
-    background-color: pink;
+    /*background-color: pink;*/
     position: relative;
 }
 
@@ -290,5 +290,35 @@ a {
     position: absolute;
     right: 0;
     bottom: 10px;
+}
+/* 导航栏信息模块 */
+.navitems{
+    position: absolute;
+    left: 200px;
+    bottom: 0px;
+}
+.navitems ul{
+    float: left;
+}
+.navitems ul li{
+    float: left;
+    margin-left: 30px;
+}
+.navitems li a {
+    font-size: 16px;
+    color: #555A5F;
+    font-weight: 700;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+}
+.navitems li a:hover {
+    color: #f10215;
+}
+.navitems .spacer {
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: -10px;
 }
 /*header 部分 end*/
