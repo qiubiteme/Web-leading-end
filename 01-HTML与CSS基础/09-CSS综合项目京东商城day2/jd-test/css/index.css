@@ -1,2 +1,25 @@
 
 /* 京东首页的css */
+.jd{
+    background-color: pink;
+    position: relative;
+}
+.jd-inner{
+    height: 480px;
+    background-color: skyblue;
+    z-index: 999;  /* 只有定位的盒子才有 z-index */
+    position: relative;
+}
+.ad {
+    height: 480px;
+    background: url(../images/bg.png) no-repeat top center;
+    position: absolute;  /* 行内块转换 */
+    top: 0;
+    left: 0;
+    width: 100%;  /* 强制显示宽度 */
+}
+.ad a {
+    display: block;
+    height: 100%;
+
+}
