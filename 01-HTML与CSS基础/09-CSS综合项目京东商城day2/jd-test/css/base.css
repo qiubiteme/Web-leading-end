@@ -8,6 +8,12 @@
 /* 版心 */
 body {
     background-color: #F6F6F6;
+
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
 .w {
@@ -39,6 +45,24 @@ input, button {
 
 a {
     text-decoration: none;
+}
+
+h1, h5, p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table; /* 这句话可以出发BFC BFC可以清除浮动,BFC我们后面讲 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
 }
 
 /*字体图标的引入*/
@@ -243,13 +267,16 @@ a {
     top: 70px;
     left: 320px;
 }
+
 .hotwords a {
     color: #9E9B99;
     font-size: 12px;
 }
+
 .hotwords a:hover {
     color: #f10215;
 }
+
 .myCar {
     width: 188px;
     height: 33px;
@@ -260,11 +287,13 @@ a {
     text-align: center;
     line-height: 33px;
 }
+
 .myCar a {
     font-size: 12px;
     color: #f10215;
 
 }
+
 /*购物车*/
 .myCar i {
     font-family: "icomoon";
@@ -272,6 +301,7 @@ a {
     color: #f10215;
     margin-right: 3px;
 }
+
 .myCar s {
     position: absolute;
     top: 5px;
@@ -285,25 +315,30 @@ a {
     border-radius: 7px;
     color: #fff;
 }
+
 /*电脑*/
 .computer {
     position: absolute;
     right: 0;
     bottom: 10px;
 }
+
 /* 导航栏信息模块 */
-.navitems{
+.navitems {
     position: absolute;
     left: 200px;
     bottom: 0px;
 }
-.navitems ul{
+
+.navitems ul {
     float: left;
 }
-.navitems ul li{
+
+.navitems ul li {
     float: left;
     margin-left: 30px;
 }
+
 .navitems li a {
     font-size: 16px;
     color: #555A5F;
@@ -312,13 +347,175 @@ a {
     line-height: 40px;
     display: block;
 }
+
 .navitems li a:hover {
     color: #f10215;
 }
+
 .navitems .spacer {
     float: left;
     margin-top: 15px;
     margin-left: 20px;
     margin-right: -10px;
 }
+
 /*header 部分 end*/
+
+/*页面底部分-start*/
+.footer {
+    height: 560px;
+    background: #EAEAEA;
+}
+
+.footer-service {
+    /*height: 100px;*/
+    border: 1px solid #DEDEDE;
+}
+
+.footer-service-inner {
+    padding: 30px 0;
+    /*background-color: blue;*/
+}
+
+.footer-service-inner li {
+    float: left;
+    width: 297px;
+    height: 42px;
+    line-height: 42px;
+    /*background-color: palegreen;*/
+}
+
+.service_unit {
+    width: 225px;
+    height: 42px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.service_unit h5 {
+    width: 36px;
+    height: 42px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/ico_service.png) no-repeat;
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+.service_unit p {
+    line-height: 42px;
+    margin-left: 45px;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+.service_unit .kuai {
+    background-position: 0 -44px;
+}
+
+.service_unit .hao {
+    background-position: 0 -86px;
+}
+
+.service_unit .sheng {
+    background-position: 0 -128px;
+}
+
+.help {
+    height: 180px;
+    padding-top: 20px;
+}
+
+.help dl {
+    float: left;
+    width: 195px;
+}
+
+.help dt {
+    font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    height: 30px;
+}
+
+.help dd {
+    height: 22px;
+}
+
+.help dd a {
+    color: #727272;
+    font-size: 12px;
+}
+
+.help dd a:hover {
+    color: #F10215;
+}
+
+.help .cover {
+    float: right;
+    width: 207px;
+    height: 150px;
+    background: url(../images/ico_footer.png) no-repeat;
+}
+
+.cover dt {
+    text-align: center;
+}
+
+.help .info {
+    width: 175px;
+    height: 50px;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 10px;
+    line-height: 18px;
+    color: #727272;
+}
+
+.more {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.copyright {
+    border-top: 1px solid #cccccc;
+    padding-top: 15px;
+}
+
+.links {
+    text-align: center;
+}
+.links a{
+    color: #727272;
+    font-size: 12px;
+}
+.links span {
+    font-size: 12px;
+    color: #D4CDCD;
+    margin: 0 6px;
+}
+.c-info {
+    font-size: 12px;
+    color: #9E9E9B;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 10px;
+}
+/*版权信息*/
+
+.tupian {
+    text-align: center;
+    margin-top: 10px;
+}
+.tupian a{
+    width: 103px;
+    height: 32px;
+    display: inline-block;
+    background: url(../images/ico_footer.png) no-repeat 0 -151px;
+}
+.tupian .kexin {
+    background-position: -104px -151px;
+}
+/*页面底部分-emd*/
