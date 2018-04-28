@@ -3166,6 +3166,7 @@ height 设置播放窗口的高度
 li:first-child { /*  选择第一个孩子 */
         		color: pink; 
         	}
+
 li:last-child {   /* 最后一个孩子 */
         		color: purple;
         	}
@@ -3182,29 +3183,35 @@ li:nth-child(4) {   /* 选择第4个孩子  n  代表 第几个的意思 */
 
 ```css
 /* 获取到 拥有 该属性的元素 */
-div[class^=font] { /*  class^=font 表示 font 开始位置就行了 */
-			color: pink;
-		}
-div[class$=footer] { /*  class$=footer 表示 footer 结束位置就行了 */
-			color: skyblue;
-		}
-div[class*=tao] { /* class*=tao  *=  表示tao 在任意位置都可以 */
-			color: green;
-		}
+  		div[class] { /*选出带类属性的*/
+            background-color: pink;
+        }
+
+        div[class=demo] { /*选出类名是demo的*/
+            background-color: gold;
+        }
+
+        div[class^=test] {/*选出以test开头的*/
+            background-color: purple;
+        }
+
+        div[class$=test] {/*选出以test结尾的*/
+            background-color: red;
+        }
 ```
 
 ```html
-<div class="font12">属性选择器</div>
-    <div class="font12">属性选择器</div>
-    <div class="font24">属性选择器</div>
-    <div class="font24">属性选择器</div>
-    <div class="font24">属性选择器</div>
-    <div class="24font">属性选择器123</div>
-    <div class="sub-footer">属性选择器footer</div>
-    <div class="jd-footer">属性选择器footer</div>
-    <div class="news-tao-nav">属性选择器</div>
-    <div class="news-tao-header">属性选择器</div>
-    <div class="tao-header">属性选择器</div>
+<div class="demo">王者荣耀</div>
+<div>王者荣耀</div>
+<div>王者荣耀</div>
+<div>王者荣耀</div>
+<div>王者荣耀</div>
+<div>王者荣耀</div>
+<div class="firsttest">王者荣耀</div>
+<div class="test">王者荣耀</div>
+<div class="test1">王者荣耀</div>
+<div class="test2">王者荣耀</div>
+<div class="test3">王者荣耀</div>
 ```
 
 ## 伪元素选择器（CSS3)
