@@ -5,16 +5,34 @@
 	<title>Document</title>
 </head>
 <body>
-	<audio  controls loop>
-		<source src="bgsound.mp3"/>
-		<source src="music.ogg"/>
-		您的浏览器版本太低
-	</audio>
+<!--<embed src="http://player.youku.com/player.php/sid/XMTI4MzM2MDIwOA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>-->
+<!--通过src指定音频文件路径-->
+<!--<audio src="bgsound.mp3" autoplay controls loop></audio>-->
+<audio controls autoplay loop>
+	<!--通过source标签声明多种音频格式文件-->
+	<source src="bgsound.mp3"/>
+	<source src="music.ogg"/>
+	您的浏览器版本不支持HTML播放音频
+</audio>
+<!--通过src指定音频文件路径-->
+<video src="movie04.ogg" autoplay controls loop></video>
+<video controls autoplay loop>
+	<!--通过source标签声明多种音频格式文件-->
+	<source src="movie04.ogg"/>
+	<source src="mp4.mp4"/>
+	您的浏览器版本不支持HTML播放视频
+</video>
+	<!--<audio  controls loop>-->
+		<!--<source src="bgsound.mp3"/>-->
+		<!--<source src="music.ogg"/>-->
+		<!--您的浏览器版本太低-->
+	<!--</audio>-->
 
-	<video autoplay  controls>
+	<!--<video autoplay  controls>-->
 
-		<source  src="movie04.ogg"/>
-		<source  src="mp4.mp4"/>
-	</video>
+		<!--<source  src="movie04.ogg"/>-->
+		<!--<source  src="mp4.mp4"/>-->
+	<!--</video>-->
+
 </body>
 </html>

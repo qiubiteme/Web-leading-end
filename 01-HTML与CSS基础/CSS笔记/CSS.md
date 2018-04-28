@@ -3083,7 +3083,10 @@ HTML5通过<audio>标签来解决音频播放的问题。
 
 使用相当简单，如下图所示
 
-![1498468026526](media/1498468026526.png) 
+```
+<!--通过src指定音频文件路径-->
+<audio src="bgsound.mp3"></audio> 
+```
 
 并且可以通过附加属性可以更友好控制音频的播放，如：
 
@@ -3101,17 +3104,25 @@ loop 循环播放    如果这个属性不写 默认播放一次        loop  �
 
 <source> 标签允许您规定可替换的视频/音频文件供浏览器根据它对媒体类型或者编解码器的支持进行选择
 
-![1498468052965](media/1498468052965.png) 
-
-
+```
+<audio controls autoplay loop>
+	<!--通过source标签声明多种音频格式文件-->
+	<source src="bgsound.mp3"/>
+	<source src="music.ogg"/>
+	您的浏览器版本不支持HTML播放音频
+</audio>
+```
 
 ### 多媒体 video
 
 HTML5通过<audio>标签来解决音频播放的问题。
 
-同音频播放一样，<video>使用也相当简单，如下图
+同音频播放一样，<video>使用也相当简单，如下
 
-![1498468072194](media/1498468072194.png) 
+```
+<!--通过src指定音频文件路径-->
+<video src="movie04.ogg" autoplay controls loop></video>
+```
 
 同样，通过附加属性可以更友好的控制视频的播放
 
@@ -3131,11 +3142,14 @@ height 设置播放窗口的高度
 
 **多浏览器支持的方案，如下图******
 
-![1498468097509](media/1498468097509.png)
-
-# 
-
-
+```
+<video controls autoplay loop>
+	<!--通过source标签声明多种音频格式文件-->
+	<source src="movie04.ogg"/>
+	<source src="mp4.mp4"/>
+	您的浏览器版本不支持HTML播放视频
+</video>
+```
 
 # CSS3 新增选择器
 
