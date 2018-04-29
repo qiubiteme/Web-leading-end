@@ -37,9 +37,32 @@ nav li a{
     display: block;
     height: 40px;
     font-size: 18px;
-    color: #050505;
     padding: 0 10px;
 }
 nav li a:hover{
     border-bottom: 2px solid #00a4ff;
+}
+
+.search{
+    width: 410px;
+    height: 40px;
+    background-color: yellow;
+    float: left;
+    margin-left: 50px;
+}
+.search input{
+    width: 360px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    outline: none;
+    padding-left: 10px;
+    float: left;
+}
+.search button{
+    width: 50px;
+    height: 40px;
+    float: left;
+    border: 0;
+    outline: none;
+    background: url(../images/fa-search.png) no-repeat;
 }
