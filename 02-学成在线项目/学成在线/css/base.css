@@ -3,6 +3,7 @@
 	margin:0;
 	padding:0;
 	/*box-sizing: border-box;   !*  css3 盒子模型 *!*/
+	box-sizing: border-box;
 }
 em,i{
 	font-style:normal;

@@ -1,0 +1,24 @@
+body {
+    background-color: #f3f5f7;
+}
+
+header {
+    width: 1300px;
+    height: 100px;
+    margin: 0px auto;
+    background-color: pink;
+    padding-top: 30px;
+}
+.logo{
+    width: 195px;
+    height: 42px;
+    float: left;
+}
+.logo a{
+    display: block;
+    width: 195px;
+    height: 42px;
+    background: url(../images/logo.png) no-repeat;
+    text-indent: -999px;
+    overflow: hidden;
+}
