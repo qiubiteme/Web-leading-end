@@ -8,13 +8,15 @@ header {
     margin: 0px auto;
     padding-top: 30px;
 }
+
 /*logo部分*/
-.logo{
+.logo {
     width: 195px;
     height: 42px;
     float: left;
 }
-.logo a{
+
+.logo a {
     display: block;
     width: 195px;
     height: 42px;
@@ -22,33 +24,38 @@ header {
     text-indent: -999px;
     overflow: hidden;
 }
+
 /*navigation导航栏*/
-nav{
+nav {
     float: left;
 }
-nav li{
+
+nav li {
     float: left;
     height: 40px;
     line-height: 40px;
     margin-left: 25px;
 }
-nav li a{
+
+nav li a {
     display: block;
     height: 40px;
     font-size: 18px;
     padding: 0 10px;
 }
-nav li a:hover{
+
+nav li a:hover {
     border-bottom: 2px solid #00a4ff;
 }
 
-.search{
+.search {
     width: 410px;
     height: 40px;
     float: left;
     margin-left: 50px;
 }
-.search input{
+
+.search input {
     width: 360px;
     height: 40px;
     border: 1px solid #00a4ff;
@@ -56,7 +63,8 @@ nav li a:hover{
     padding-left: 10px;
     float: left;
 }
-.search button{
+
+.search button {
     width: 50px;
     height: 40px;
     float: left;
@@ -64,22 +72,26 @@ nav li a:hover{
     outline: none;
     background: url(../images/fa-search.png) no-repeat;
 }
-.personal{
+
+.personal {
     float: right;
     height: 40px;
     line-height: 40px;
 }
-.personal dt, .personal dd{
+
+.personal dt, .personal dd {
     float: left;
 }
-.personal s{
+
+.personal s {
     position: relative;
     padding: 0 20px;
     text-decoration: none;
 }
+
 .personal s::before {
     content: "";
-    display: block;  /* 因为伪元素默认的是行内元素 */
+    display: block; /* 因为伪元素默认的是行内元素 */
     width: 6px;
     height: 6px;
     background-color: red;
@@ -88,11 +100,58 @@ nav li a:hover{
     right: 15px;
     top: 0;
 }
+
 .personal span img {
     border-radius: 50%;
     margin-right: 10px;
     transition: all 0.6s;
 }
+
 .personal span img:hover {
     transform: rotate(-360deg);
+}
+
+/* banner部分 */
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+}
+
+/*inner部分*/
+
+.inner {
+    height: 420px;
+    position: relative;
+
+}
+
+.subnav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 190px;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    padding-top: 10px;
+
+}
+.subnav li{
+    padding-left: 20px;
+    position: relative;
+}
+.subnav a{
+    font-size: 14px;
+    color: #FFFFFF;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+}
+.subnav a:hover {
+    color: #00b4ff;
+}
+
+.subnav span{
+    position: absolute;
+    top: 0px;
+    right: 20px;
 }
