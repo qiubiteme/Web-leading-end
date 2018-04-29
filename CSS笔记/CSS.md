@@ -3306,7 +3306,17 @@ div:first-child {
 }
 ```
 
-##学成在线综合案例 
+# 学成在线综合案例 
+
+## 转换ico图标
+
+我们可以自己做的图片，转换为 ico图标，以便放到我们站点里面。 http://www.bitbug.net/
+
+1. 先切图 尽量透明图片  png 格式
+2. 把图片转换为图标   http://www.bitbug.net/
+3. 把ico图标放入 网站根目录下  之后 利用<link rel="shortcut icon" href="favicon.ico" />  引入到html里面
+
+cuttman  官网   http://www.cutterman.cn/zh
 
 ## 过渡(CSS3)
 
