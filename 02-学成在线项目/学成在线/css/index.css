@@ -9,6 +9,7 @@ header {
     background-color: pink;
     padding-top: 30px;
 }
+/*logo部分*/
 .logo{
     width: 195px;
     height: 42px;
@@ -21,4 +22,24 @@ header {
     background: url(../images/logo.png) no-repeat;
     text-indent: -999px;
     overflow: hidden;
+}
+/*navigation导航栏*/
+nav{
+    float: left;
+}
+nav li{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 25px;
+}
+nav li a{
+    display: block;
+    height: 40px;
+    font-size: 18px;
+    color: #050505;
+    padding: 0 10px;
+}
+nav li a:hover{
+    border-bottom: 2px solid #00a4ff;
 }
