@@ -158,6 +158,7 @@ nav li a:hover {
     top: 0px;
     right: 20px;
 }
+
 /*轮播小圆点*/
 .circle {
     width: 170px;
@@ -173,9 +174,12 @@ nav li a:hover {
     height: 13px;
     background: rgba(225, 225, 225, 0.4);
     margin: 0 5px;
-    border-radius: 6px
+    border-radius: 6px;
+
+    transition: all 0.3s;
 }
-.circle i:hover{
+
+.circle i:hover {
     background-color: #FFFFFF;
     width: 20px;
 }
