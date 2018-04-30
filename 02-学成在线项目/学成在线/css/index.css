@@ -183,6 +183,7 @@ nav li a:hover {
     background-color: #FFFFFF;
     width: 20px;
 }
+
 /*我的课程表部分*/
 .timebook {
     width: 228px;
@@ -206,25 +207,31 @@ nav li a:hover {
     text-align: center;
     text-align: center;
 }
+
 .timebook dd {
     padding: 15px 20px 0;
 }
+
 .timebook dd li {
     height: 60px;
     border-bottom: 1px solid #ccc;
     /* background-color: pink; */
     padding-top: 6px;
 }
+
 .timebook dd li:last-child {
     border: 0;
 }
-.timebook dd li a:hover{
+
+.timebook dd li a:hover {
     color: #22b0ff;
 }
-.timebook  h5 {
+
+.timebook h5 {
     font-size: 16px;
     font-weight: normal;
 }
+
 .all {
     height: 40px;
     border: 1px solid #22b0ff;
@@ -234,12 +241,13 @@ nav li a:hover {
     line-height: 40px;
     font-size: 16px;
 }
-.all:hover{
-    background-color: #22b0ff;
-    color:#fff;
-}
-/*精品推荐*/
 
+.all:hover {
+    background-color: #22b0ff;
+    color: #fff;
+}
+
+/*精品推荐*/
 .recommend {
     margin-top: 10px;
     background-color: #fff;
@@ -248,21 +256,26 @@ nav li a:hover {
     position: relative;
     box-shadow: 0px 1px 12px rgba(0, 0, 0, .4);
 }
+
 .rec-l {
     padding-left: 30px;
 }
+
 .rec-l strong {
     color: #22b0ff;
     font-size: 16px;
     margin-right: 15px;
 }
+
 .rec-l a {
     margin: 0 15px;
     font-size: 16px;
 }
+
 .rec-l a:hover {
     color: #22b0ff;
 }
+
 .recommend em {
     position: absolute;
     right: 20px;
@@ -270,3 +283,71 @@ nav li a:hover {
     bottom: 0;
     color: #22b0ff;
 }
+
+/*精品产品*/
+.products {
+    margin-top: 30px;
+}
+
+.pro-hd {
+    height: 40px;
+    position: relative;
+}
+
+.pro-hd h4 {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.pro-hd a {
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+.pro-bd li {
+    width: 228px;
+    height: 270px;
+    overflow: hidden;
+    background-color: #fff;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    transition: all 0.4s;
+}
+
+.pro-bd li:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .3);
+    transform: translateY(-10px);
+}
+
+.pro-bd li:nth-child(5n) {
+    margin-right: 0;
+}
+
+.pic img {
+    transition: all 0.4s;
+}
+
+.pic img:hover {
+    margin-left: -5px;
+}
+
+.pro-title {
+    width: 185px;
+    margin: 20px auto;
+    font-size: 14px;
+    color: #050505;
+}
+
+.pro-bd p {
+    width: 185px;
+    margin: 20px auto;
+    color: #999;
+}
+
+.pro-bd p span {
+    color: #ff7c2d;
+}
+
+/*页面底部*/
