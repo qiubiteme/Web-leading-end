@@ -183,6 +183,7 @@ nav li a:hover {
     background-color: #FFFFFF;
     width: 20px;
 }
+/*我的课程表部分*/
 .timebook {
     width: 228px;
     height: 300px;
@@ -192,5 +193,49 @@ nav li a:hover {
     /* transform: translate(0, -50%); */
     transform: translateY(-50%);
     /* 但是y 要大写才可以 */
-    background-color: pink;
+    background-color: #fff;;
 }
+
+.timebook dt {
+    height: 50px;
+    background-color: #9bceea;
+    font-weight: 700;
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+    text-align: center;
+}
+.timebook dd {
+    padding: 15px 20px 0;
+}
+.timebook dd li {
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    /* background-color: pink; */
+    padding-top: 6px;
+}
+.timebook dd li:last-child {
+    border: 0;
+}
+.timebook dd li a:hover{
+    color: #22b0ff;
+}
+.timebook  h5 {
+    font-size: 16px;
+    font-weight: normal;
+}
+.all {
+    height: 40px;
+    border: 1px solid #22b0ff;
+    color: #22b0ff;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+}
+.all:hover{
+    background-color: #22b0ff;
+    color:#fff;
+}
+/*精品推荐*/
