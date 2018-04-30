@@ -131,27 +131,51 @@ nav li a:hover {
     left: 0px;
     width: 190px;
     height: 100%;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
     padding-top: 10px;
 
 }
-.subnav li{
+
+.subnav li {
     padding-left: 20px;
     position: relative;
 }
-.subnav a{
+
+.subnav a {
     font-size: 14px;
     color: #FFFFFF;
     display: block;
     height: 40px;
     line-height: 40px;
 }
+
 .subnav a:hover {
     color: #00b4ff;
 }
 
-.subnav span{
+.subnav span {
     position: absolute;
     top: 0px;
     right: 20px;
+}
+/*轮播小圆点*/
+.circle {
+    width: 170px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+}
+
+.circle i {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: rgba(225, 225, 225, 0.4);
+    margin: 0 5px;
+    border-radius: 6px
+}
+.circle i:hover{
+    background-color: #FFFFFF;
+    width: 20px;
 }
