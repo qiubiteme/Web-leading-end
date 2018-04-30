@@ -351,3 +351,45 @@ nav li a:hover {
 }
 
 /*页面底部*/
+footer {
+    height: 420px;
+    background-color: #FFF;
+    margin-top: 30px;
+    padding-top: 30px;
+}
+.footer-l {
+    margin-left: 20px;
+    float: left;
+}
+
+.footer-l p {
+    margin: 25px 0 15px 0;
+    line-height: 24px;
+}
+.footer-l a {
+    width: 120px;
+    height: 35px;
+    display: block;
+    border: 1px solid #22b0ff;
+    text-align: center;
+    line-height: 35px;
+    color: #22b0ff;
+}
+.footer-r {
+    float: right;
+}
+
+.footer-r dl {
+    float: left;
+    margin-left: 130px;
+}
+
+.footer-r dl dt {
+    font-size: 14px;
+    color: #333;
+    height: 30px;
+}
+
+.footer-r dd {
+    height: 20px;
+}
