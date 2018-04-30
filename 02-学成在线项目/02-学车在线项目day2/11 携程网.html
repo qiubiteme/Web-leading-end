@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	html, body {
+		min-width: 320px; 
+		max-width: 540px;
+		margin: 0 auto;
+		font: normal 14px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+	}
+	header {
+		height: 108px;
+	}
+	header img {
+		height: 100%;
+		width: auto;
+	}
+	nav {
+		border: 1px solid #ccc;
+		padding: 4px;
+	}
+	nav  a  {
+		text-decoration: none;
+		color: #fff;
+		text-shadow: 0 2px 1px rgba(0,0,0,.2);
+		/*text-shadow:水平位置 垂直位置 模糊距离 阴影颜色;*/
+	}
+	.row {
+		height: 90px;
+		display: flex; /*伸缩布局*/
+		border-radius: 5px; 
+		overflow: hidden;
+		margin-bottom: 5px;
+	}
+	.row div {
+		height: 100%;
+		flex: 1;
+		background-color: #FF697A;
+		border-right: 1px solid #fff;
+	}
+	.row div:nth-child(3) {
+		border-right: 0;
+	}
+	.row div a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	.row33 {
+		display: flex;
+		flex-direction: column;
+	}
+	.row33 a {
+		flex: 1;
+		text-align: center;
+		line-height: 45px;
+	}
+	.row33 a:first-child {
+		border-bottom: 1px solid #fff;
+	}
+	.row em {
+		display: block;
+		height: 45px;
+		text-align: center;
+		line-height: 45px;
+		font-style: normal;
+	}
+	.row i {
+		display: block;
+		width: 43px;
+		height: 43px;
+		margin: -5px auto 0;
+		background: url(images/ctrip.png) no-repeat 0 -127px;
+		-webkit-background-size: 104px;  /* 前缀 */
+		-moz-background-size: 104px;  /* 前缀 火狐 */
+		-ms-background-size: 104px;  /* 前缀 ie */
+		-o-background-size: 104px;  /* 前缀 ie */
+		background-size: 104px;
+
+	}
+	.row .icon-flight {
+		background-position: 0 -288px;
+	}
+
+	</style>
+</head>
+<body>
+	<header>
+		<img src="images/banner.jpg" height="307" width="1536" alt="">
+	</header>
+	<nav>
+		<div class="row">
+			<div>
+				<a href="#">
+					<em>酒店</em>
+					<i></i>
+				</a>
+			</div>
+			<div class="row33">
+				<a href="#">海外酒店</a>
+				<a href="#">特价酒店</a>
+			</div>
+			<div class="row33">
+				<a href="#">团购</a>
+				<a href="#">同福客栈</a>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div>
+				<a href="#">
+					<em>酒店</em>
+					<i class="icon-flight"></i>
+				</a>
+			</div>
+			<div class="row33">
+				<a href="#">海外酒店</a>
+				<a href="#">特价酒店</a>
+			</div>
+			<div class="row33">
+				<a href="#">团购</a>
+				<a href="#">同福客栈</a>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div>
+				<a href="#">
+					<em>酒店</em>
+					<i></i>
+				</a>
+			</div>
+			<div class="row33">
+				<a href="#">海外酒店</a>
+				<a href="#">特价酒店</a>
+			</div>
+			<div class="row33">
+				<a href="#">团购</a>
+				<a href="#">同福客栈</a>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="row33">
+				<a href="#">海外酒店</a>
+				<a href="#">特价酒店</a>
+			</div>
+			<div class="row33">
+				<a href="#">海外酒店</a>
+				<a href="#">特价酒店</a>
+			</div>
+			<div class="row33">
+				<a href="#">团购</a>
+				<a href="#">同福客栈</a>
+			</div>
+			
+		</div>
+	</nav>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   * {
+	   	margin: 0;
+	   	padding: 0;
+	   }
+	   body {
+	   	/*perspective: 500px;*/
+	   }
+		div {
+			width: 224px;
+			height: 224px;
+			
+
+		}
+		
+		div img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: all 2s;	
+
+		}
+
+		div:hover img {
+			transform: rotateY(180deg);
+		}
+		div img:last-child {
+			backface-visibility: hidden;
+			/*定义当图片不面向屏幕时是否可见*/
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="images/hou.svg" alt="">
+		<img src="images/qian.svg" alt="">
+	</div>
+</body>
+</html>
