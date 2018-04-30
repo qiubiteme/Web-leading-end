@@ -239,3 +239,34 @@ nav li a:hover {
     color:#fff;
 }
 /*精品推荐*/
+
+.recommend {
+    margin-top: 10px;
+    background-color: #fff;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    box-shadow: 0px 1px 12px rgba(0, 0, 0, .4);
+}
+.rec-l {
+    padding-left: 30px;
+}
+.rec-l strong {
+    color: #22b0ff;
+    font-size: 16px;
+    margin-right: 15px;
+}
+.rec-l a {
+    margin: 0 15px;
+    font-size: 16px;
+}
+.rec-l a:hover {
+    color: #22b0ff;
+}
+.recommend em {
+    position: absolute;
+    right: 20px;
+    font-size: 14px;
+    bottom: 0;
+    color: #22b0ff;
+}
