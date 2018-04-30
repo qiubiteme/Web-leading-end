@@ -183,3 +183,14 @@ nav li a:hover {
     background-color: #FFFFFF;
     width: 20px;
 }
+.timebook {
+    width: 228px;
+    height: 300px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    /* transform: translate(0, -50%); */
+    transform: translateY(-50%);
+    /* 但是y 要大写才可以 */
+    background-color: pink;
+}
