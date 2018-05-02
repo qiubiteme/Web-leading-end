@@ -3742,14 +3742,28 @@ div {
 
 动画是CSS3中具有颠覆性的特征之一，可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果。
 
+
+
+#### CSS3 动画属性（Animation）
+
+| 属性                                                         | 描述                                                     | CSS  |
+| ------------------------------------------------------------ | -------------------------------------------------------- | ---- |
+| [@keyframes](http://www.w3school.com.cn/cssref/pr_keyframes.asp) | 规定动画。                                               | 3    |
+| [animation](http://www.w3school.com.cn/cssref/pr_animation.asp) | 所有动画属性的简写属性，除了 animation-play-state 属性。 | 3    |
+| [animation-name](http://www.w3school.com.cn/cssref/pr_animation-name.asp) | 规定 @keyframes 动画的名称。                             | 3    |
+| [animation-duration](http://www.w3school.com.cn/cssref/pr_animation-duration.asp) | 规定动画完成一个周期所花费的秒或毫秒。                   | 3    |
+| [animation-timing-function](http://www.w3school.com.cn/cssref/pr_animation-timing-function.asp) | 规定动画的速度曲线。                                     | 3    |
+| [animation-delay](http://www.w3school.com.cn/cssref/pr_animation-delay.asp) | 规定动画何时开始。                                       | 3    |
+| [animation-iteration-count](http://www.w3school.com.cn/cssref/pr_animation-iteration-count.asp) | 规定动画被播放的次数。                                   | 3    |
+| [animation-direction](http://www.w3school.com.cn/cssref/pr_animation-direction.asp) | 规定动画是否在下一周期逆向地播放。                       | 3    |
+| [animation-play-state](http://www.w3school.com.cn/cssref/pr_animation-play-state.asp) | 规定动画是否正在运行或暂停。                             | 3    |
+| [animation-fill-mode](http://www.w3school.com.cn/cssref/pr_animation-fill-mode.asp) | 规定对象动画时间之外的状态。                             | 3    |
 语法格式：
 
 ~~~css
 animation:动画名称 动画时间 运动曲线  何时开始  播放次数  是否反方向;
+
 ~~~
-
-![1498461096243](media/1498461096243.png)
-
 关于几个值，除了名字，动画时间，延时有严格顺序要求其它随意r
 
 ~~~css
