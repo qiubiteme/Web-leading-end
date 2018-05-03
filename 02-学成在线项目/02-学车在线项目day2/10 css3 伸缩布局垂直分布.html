@@ -15,34 +15,28 @@
 		display: flex;  
 		min-width: 500px;   /*section最小的宽度就是 500*/
 		flex-direction: column;  /*垂直分布*/
+		flex-direction: row;
+		flex-direction: row-reverse;
+		flex-direction: column;
+		flex-direction: column-reverse;
 	}
 	section div {	
 		
 		flex: 1;    /*孩子的份数*/
 
 	}
-	section div:nth-child(1) {
-		background-color: pink;
-		
-	
-	}
-	section div:nth-child(2) {
-		background-color: purple;
-		
-	}
-	section div:nth-child(3) {
-		background-color: blue;
-		
-	
-	}
+
 
 	</style>
 </head>
 <body>
 	<section>
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
+		<div style="background-color:coral;">A</div>
+		<div style="background-color:lightblue;">B</div>
+		<div style="background-color:khaki;">C</div>
+		<div style="background-color:pink;">D</div>
+		<div style="background-color:lightgrey;">E</div>
+		<div style="background-color:lightgreen;">F</div>
 	</section>
 </body>
 </html>
