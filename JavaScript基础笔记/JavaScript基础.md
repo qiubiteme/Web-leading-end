@@ -401,7 +401,7 @@ Number、String、Boolean、Undefined、Null
 
   '程序猿'，'程序媛', "黑马程序猿"
 
-  ​
+  
 
   思考：如何打印以下字符串。
   我是一个"正直"的人 
@@ -506,7 +506,7 @@ console.log(name, age);
   console.log(num.toString());
   ```
 
-- String()
+- String()强制转换
 
   ```
   String()函数存在的意义：有些值没有toString()，这个时候可以使用String()。比如：undefined和null
@@ -522,6 +522,7 @@ console.log(name, age);
 
   ```
   Number()可以把任意值转换成数值，如果要转换的字符串中有一个不是数值的字符，返回NaN
+  想要转数字:Number();要比parseInt(),parseFloat()严格
   ```
 
 - parseInt()
@@ -544,9 +545,9 @@ console.log(name, age);
 
   ```javascript
   var str = '500';
-  console.log(+str);		// 取正
+  console.log(+str);		// 取正 
   console.log(-str);		// 取负
-  console.log(str - 0);
+  console.log(str - 0);    
   ```
 
 ### 转换成布尔类型
@@ -693,13 +694,11 @@ var num = 10;
 if (/* 条件表达式 */) {
   // 执行语句
 }
-
 if (/* 条件表达式 */){
   // 成立执行语句
 } else {
   // 否则执行语句
 }
-
 if (/* 条件1 */){
   // 成立执行语句
 } else if (/* 条件2 */){
@@ -710,10 +709,32 @@ if (/* 条件1 */){
   // 最后默认执行语句
 }
 ```
-案例：
+##### 案例：练习
     求两个数的最大数
-    判断一个数是偶数还是奇数
-    分数转换，把百分制转换成ABCDE   <60  E  60-70 D  70-80 C  80-90 B  90 - 100 A
+
+```
+  var x = 10;
+        var y = 15;
+        if (x > y) {
+            alert("最大数为x" + x)
+        } else {
+            alert("最大数为y" + y)
+        }
+```
+
+​    判断一个数是偶数还是奇数
+
+```
+ var x = 10;
+        if (x % 2 == 0) {
+            alert("x是偶数" + x)
+        } else {
+            alert("x是奇数" + x)
+        }
+```
+
+
+​    分数转换，把百分制转换成ABCDE   <60  E  60-70 D  70-80 C  80-90 B  90 - 100 A
 作业：
     判断一个年份是闰年还是平年
       闰年：能被4整除，但不能被100整除的年份 或者 能被400整除的年份
@@ -726,6 +747,15 @@ if (/* 条件1 */){
 案例：
 	是否年满18岁
 	从两个数中找最大值
+
+```
+   //显示成年还是未成年
+    var age = 10;
+    var result2 = age >= 18 ? "成年了" : "未成年";
+    console.log(result2);
+```
+
+总结:大多数情况,使用if-else的语句都可以用三元表达式的方式来表示
 
 ### switch语句
 
