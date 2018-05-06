@@ -76,7 +76,7 @@
         //    console.log(num);//10
         //    num=100;//变量的重新赋值
         //    console.log(num);//100
-        var i = 0;
+    /*    var i = 0;
         var sum = 0;
         while (i <= 100) {
             if (i % 2 == 0 && i != 0) {
@@ -84,7 +84,18 @@
             }
             i++;
         }
-        console.log("100以内偶数的和" + sum)
+        console.log("100以内偶数的和" + sum)*/
+        var i = 0;
+        var sum = 0;
+        do {
+            if (i % 3 == 0 && i != 0) {
+                sum = sum + i;
+            }
+            i++;
+
+        } while (i <= 100)
+        alert("100内三的倍数的和" + sum)
+
 
     </script>
 </head>
