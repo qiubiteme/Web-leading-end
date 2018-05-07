@@ -1181,8 +1181,9 @@ tips: ***监视变量，不要监视表达式，因为监视了表达式，那�
 1. 代码调试的能力非常重要，只有学会了代码调试，才能学会自己解决bug的能力。初学者不要觉得调试代码麻烦就不去调试，知识点花点功夫肯定学的会，但是代码调试这个东西，自己不去练，永远都学不会。
 2. 今天学的代码调试非常的简单，只要求同学们记住代码调试的这几个按钮的作用即可，后面还会学到很多的代码调试技巧。
 
-
 ## 数组
+
+
 
 ### 为什么要学习数组
 
@@ -1248,9 +1249,145 @@ arr[3] = "pink";
 ```
 ### 案例
 
+
+
+案例1:求数组中所有元素的和
+
 ```
-求一组数中的所有数的和和平均值
-求一组数中的最大值和最小值，以及所在位置
+
+ var arr1 = [10, 20, 30, 40, 50];
+    var sum = 0;
+    for (var i = 0; i < arr1.length; i++) {
+      sum += arr1[i];
+    }
+    console.log(sum);
+
+```
+
+案例2:求数组中所有元素的平均值
+```
+
+
+     var arr2 = [1, 2, 3, 4, 5];
+    var sum2 = 0;
+    for (var i = 0; i < arr2.length; i++) {
+      sum2 += arr2[i];
+    }
+    console.log(sum2 / arr2.length);
+```
+
+案例3:求一组数中的最大值和最小值，以及所在位置
+
+```
+		var arr3 = [1, 3, 2, 5, 10, 100, 50];
+        //假设max变量中存储的是最大值
+        var max = arr3[0];
+        var x = 0;
+        for (var i = 0; i < arr3.length; i++) {
+            //判断这个变量的值和数组中每个元素的值是不是最大值
+            if (max < arr3[i]) {
+                max = arr3[i];
+                x=i;
+            }
+        }
+        console.log("最大值:" + max+"在数组中的下标位置"+x);
+```
+
+//案例4:求数组中所有元素的最小值
+
+```
+var arr4 = [100, 10, 20, 30, 40, 50];
+var min = arr4[0];//假设min里存储的就是最小值
+for (var i = 0; i < arr4.length; i++) {
+    if (min > arr4[i]) {
+        min = arr4[i];
+    }
+}
+console.log("最小值:" + min);
+```
+
+案例5:倒序遍历数组
+
+```
+        var arr5 = [10, 20, 30, 40, 50, 100];
+        //正序
+           for (var i = 0; i < arr5.length; i++) {
+             console.log(arr5[i]);
+           }
+        //倒序
+        for (var i = arr5.length - 1; i >= 0; i--) {
+            console.log(arr5[i]);
+        }
+```
+
+案例6:把数组中每个元素用|拼接到一起产生一个字符串并输出
+
+```
+ var names = ["卡卡西", "佐助", "鸣人", "大蛇丸", "雏田", "小苏", "凤姐", "黑崎一护"];
+        var str = "";//空的字符串
+        for (var i = 0; i <= names.length; i++) {
+            str += names[i] + "|";
+        }
+        console.log(str);
+```
+
+  案例7:去掉数组中重复的0，把其他的数据放在一个新的数组中
+
+```
+			var arr = [10, 0, 20, 0, 30, 0, 50];
+           var newArr=[];//新数组,用来存放第一个数组中所有非0的数字
+           for(var i=0;i<arr.length;i++){
+             if(arr[i]!=0){
+               newArr[newArr.length]=arr[i];
+             }
+           }
+           //把新数组的长度作为下标使用,数组的长度是可以改变的
+           console.log(newArr);
+```
+
+   案例8:反转数组---把数组中的数据的位置调换
+
+```
+           var array = [10, 20, 30, 40, 50];
+           //循环的目的是控制交换的次数
+           for (var i = 0; i < array.length / 2; i++) {
+             //先把第一个元素的值放在第三方变量中
+             var temp = array[i];
+             array[i] = array[array.length - 1 - i];
+             array[array.length - 1 - i] = temp;
+           }
+           console.log(array);
+
+方法2
+           for(var i=array.length-1;i>=0;i--){
+             console.log(array[i]);
+           }
+        console.log(array);//50 40 30 20 10
+```
+
+//冒泡排序:把所有的数据按照一定的顺序进行排列(从小到大,从大到下)
+
+```
+    var arr = [10, 0, 100, 20, 60, 30];
+    //循环控制比较的轮数
+    for (var i = 0; i < arr.length - 1; i++) {
+      //控制每一轮的比较的次数
+      for (var j = 0; j < arr.length - 1 - i; j++) {
+        if (arr[j] < arr[j + 1]) {
+          var temp = arr[j];
+          arr[j] = arr[j + 1];
+          // arr[j + 1] = temp;
+        }
+      }
+    }
+    console.log(arr);
+```
+
+
+
+```
+
+
 将字符串数组用|或其他符号分割
 要求将数组中的0项去掉，将不为0的值存入一个新的数组，生成新的数组
 翻转数组
