@@ -1508,10 +1508,62 @@ function fn(a, b) {
 ### 案例
 
 - 求1-n之间所有数的和
+
+  ```
+        function everySum(x) {
+              var sum = 0;
+              for (var i = 1; i <= x; i++) {
+                  sum += i;
+              }
+              console.log(sum);
+          }
+  ```
+
 - 求n-m之间所有数额和
+
+  ```
+      function geteverySum2(n, m) {
+        var sum = 0;
+        for (var i = n; i <= m; i++) {
+          sum += i;
+        }
+        return sum;
+      }
+  ```
+
 - 圆的面积
+
+  ```
+      function getS(r) {
+        return Math.PI * r * r;
+      }
+  ```
+
+  
+
 - 求2个数中的最大值
+
+  ```
+          function consoleMax(x, y) {
+              console.log(x > y ? x : y);
+          }
+  ```
+
+  
+
 - 求3个数中的最大值
+
+  ```
+          function consoleMax(x, y, z) {
+              timp;
+              timp = x > y ? x : y;
+              timp = timp > z ? timp : z;
+              console.log(timp)
+          }
+  ```
+
+  
+
 - 判断一个数是否是素数
 
 ### 函数的返回值
