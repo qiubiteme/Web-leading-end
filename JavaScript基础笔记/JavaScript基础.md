@@ -1560,11 +1560,30 @@ function fn(a, b) {
               timp = timp > z ? timp : z;
               console.log(timp)
           }
+  方法2
+      function getThreeMax(x, y, z) {
+        return x > y ? (x > z ? x : z) : (y > z ? y : z);
+      }
   ```
 
   
 
-- 判断一个数是否是素数
+- 判断一个数是否是素数(质数),只能被1和自身整除，质数是从2开始
+
+  ```
+      //用这个数字和这个数字前面的所有的数字整除一次(没有1的,没有自身的)
+      function isPrimeNumber(num) {
+          for (var i = 2; i < num; i++) {
+              if (num % i == 0) {
+                  //说明有一个数字整除了,就没有必要向后继续整除了,此时就已经验证出不是质数
+                  return false;
+              }
+          }
+          return true;
+      }
+  ```
+
+  
 
 ### 函数的返回值
 
@@ -1595,9 +1614,24 @@ var 变量 = 函数名(实参1, 实参2, 实参3);
 
 ### 案例
 
-- 求阶乘
+- 求一个数阶乘
+
+  ```
+      function getJieCheng(num) {
+        var result = 1;
+        for (var i = 1; i <= num; i++) {
+          result *= i;
+        }
+        return result;
+      }
+  ```
+
 - 求1!+2!+3!+....+n!
+
+  
+
 - 求一组数中的最大值
+
 - 求一组数中的最小值
 
 ### arguments的使用
@@ -1612,13 +1646,67 @@ var 变量 = 函数名(实参1, 实参2, 实参3);
 
 ### 案例
 
-```javascript
-求斐波那契数列Fibonacci中的第n个数是多少？      1 1 2 3 5 8 13 21...
+求斐波那契数列Fibonacci中的第n个数是多少？
+
+规律前两个数的和等于后一个人数
+1 1 2 3 5 8 13 21 34 55 89 144
+
+```
+function getFib(num) {
+  var num1=1;
+  var num2=1;
+  var sum=0;
+  for(var i=3;i<=num;i++){
+    sum=num1+num2;
+    num1=num2;
+    num2=sum;
+  }
+  return sum;
+}
+```
+
 翻转数组，返回一个新数组
 对数组排序，从小到大
-输入一个年份，判断是否是闰年[闰年：能被4整数并且不能被100整数，或者能被400整数]
-输入某年某月某日，判断这一天是这一年的第几天？
+输入一个年份，判断是否是闰年[闰年：能被4整数并且不能被100整数，或者能被400整数
+
 ```
+    function isLeapYear(year) {
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+    }
+```
+
+输入某年某月某日，判断这一天是这一年的第几天？
+
+```
+        function getDays(year, month, day) {
+            //定义变量存储对应的天数
+            var days = day;
+            //如果用户输入的是一月份,没必要向后算天数,直接返回天数
+            if (month == 1) {
+                return days;
+            }
+            //代码执行到这里-----说明用户输入的不是1月份
+            //用户输入的是7月份23日----1，2，3  +23
+            //定义一个数组,存储每个月份的天数
+            var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            //当前天数加月份的和等于总天数
+            for (var i = 0; i < month - 1; i++) {
+                days += months[i];
+            }
+            //需要判断这个年份是不是闰年,闰年需要加1天
+            if (isLeapYear(year) && month > 2) {
+                days++;
+            }
+            return days;
+        }
+        //判断这个年份是不是闰年
+        function isLeapYear(year) {
+            return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+        }
+```
+
+
+
 
 ## 函数其它
 
