@@ -1731,7 +1731,7 @@ function getFib(num) {
 
 ```javascript
 function fn() {}
-console.log(typeof fn);
+console.log(typeof fn);//函数的类型为function
 ```
 
 - 函数作为参数
