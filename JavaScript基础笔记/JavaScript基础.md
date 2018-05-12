@@ -2233,6 +2233,63 @@ Math.power()/Math.sqrt()	 // 求指数次幂/求平方根
 
 创建 `Date` 实例用来处理日期和时间。Date 对象基于1970年1月1日（世界标准时间）起的毫秒数。
 
+```
+//1.声明
+var myDate = new Date(); //系统当前时间
+var myDate = new Date(yyyy, mm, dd, hh, mm, ss);
+var myDate = new Date(yyyy, mm, dd);
+var myDate = new Date(“monthName dd, yyyy hh:mm:ss”);
+var myDate = new Date(“monthName dd, yyyy”);
+var myDate = new Date(epochMilliseconds);
+
+//2.获取时间的某部份
+var myDate = new Date();
+myDate.getYear(); //获取当前年份(2位)
+myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+myDate.getMonth(); //获取当前月份(0-11,0代表1月)
+myDate.getDate(); //获取当前日(1-31)
+myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+myDate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数) 时间戳！！
+myDate.getHours(); //获取当前小时数(0-23)
+myDate.getMinutes(); //获取当前分钟数(0-59)
+myDate.getSeconds(); //获取当前秒数(0-59)
+myDate.getMilliseconds(); //获取当前毫秒数(0-999)
+myDate.toLocaleDateString(); //获取当前日期
+ 
+myDate.toLocaleTimeString(); //获取当前时间,有兼容问题
+ 
+myDate.toLocaleString( ); //获取日期与时间,有兼容问题
+ 
+//3.计算之前或未来的时间
+ 
+var myDate = new Date();
+ 
+myDate.setDate(myDate.getDate() + 10); //当前时间加10天
+ 
+//类似的方法都基本相同,以set开头,具体参考第2点
+ 
+//4.计算两个日期的偏移量
+ 
+var i = daysBetween(beginDate,endDate); //返回天数
+ 
+var i = beginDate.getTimezoneOffset(endDate); //返回分钟数
+ 
+//5.检查有效日期
+ 
+//checkDate() 只允许”mm-dd-yyyy”或”mm/dd/yyyy”两种格式的日期
+ 
+if( checkDate(“2006-01-01”) ){ }
+ 
+//正则表达式(自己写的检查 yyyy-mm-dd, yy-mm-dd, yyyy/mm/dd, yy/mm/dd 四种)
+ 
+var r = /^(\d{2}|\d{4})[\/-]\d{1,2}[\/-]\d{1,2}$/;
+ 
+if( r.test( myString ) ){ }
+
+```
+
+
+
 ~~~javascript
 // 获取当前时间，UTC世界时间，距1970年1月1日（世界标准时间）起的毫秒数
 var now = new Date();
@@ -2273,13 +2330,13 @@ toLocaleTimeString()
 - 获取日期指定部分
 
 ```javascript
-getTime()  	  // 返回毫秒数和valueOf()结果一样，valueOf()内部调用的getTime()
-getMilliseconds() 
-getSeconds()  // 返回0-59
-getMinutes()  // 返回0-59
-getHours()    // 返回0-23
+getTime()  	  // 返回毫秒数和valueOf()结果一样，valueOf()内部调用的getTime()	//返回时间戳
+getMilliseconds() 	//当前毫秒数
+getSeconds()  // 当前秒
+getMinutes()  // 当前分钟
+getHours()    // 返回当前小时 0-23
 getDay()      // 返回星期几 0周日   6周6
-getDate()     // 返回当前月的第几天
+getDate()     // 返回当前月的第几天,返回标准国际时间
 getMonth()    // 返回月份，***从0开始***
 getFullYear() //返回4位的年份  如 2016
 ```
@@ -2354,7 +2411,7 @@ console.log(arr.length);
 
 - 检测一个对象是否是数组
 
-  - instanceof
+  - instanceof  			array instanceof Array    返回真假
   - Array.isArray()     HTML5中提供的方法，有兼容性问题
 
   函数的参数，如果要求是一个数组的话，可以用这种方式来进行判断
@@ -2368,16 +2425,43 @@ console.log(arr.length);
 
   演示：push()、shift()、unshift()、reverse()、sort()、splice()、indexOf()
 
+  ## Array 对象属性
+
+  | 属性                                                         | 描述                               |
+  | ------------------------------------------------------------ | ---------------------------------- |
+  | [constructor](http://www.w3school.com.cn/jsref/jsref_constructor_array.asp) | 返回对创建此对象的数组函数的引用。 |
+  | [length](http://www.w3school.com.cn/jsref/jsref_length_array.asp) | 设置或返回数组中元素的数目。       |
+  | [prototype](http://www.w3school.com.cn/jsref/jsref_prototype_array.asp) | 使您有能力向对象添加属性和方法。   |
+
+  ## Array 对象方法
+
+  | 方法                                                         | 描述                                                         |
+  | ------------------------------------------------------------ | ------------------------------------------------------------ |
+  | [concat()](http://www.w3school.com.cn/jsref/jsref_concat_array.asp) | 连接两个或更多的数组，并返回结果。                           |
+  | [join()](http://www.w3school.com.cn/jsref/jsref_join.asp)    | 把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。 |
+  | [pop()](http://www.w3school.com.cn/jsref/jsref_pop.asp)      | 删除并返回数组的最后一个元素                                 |
+  | [push()](http://www.w3school.com.cn/jsref/jsref_push.asp)    | 向数组的末尾添加一个或更多元素，并返回新的长度。             |
+  | [reverse()](http://www.w3school.com.cn/jsref/jsref_reverse.asp) | 颠倒数组中元素的顺序。                                       |
+  | [shift()](http://www.w3school.com.cn/jsref/jsref_shift.asp)  | 删除并返回数组的第一个元素                                   |
+  | [slice()](http://www.w3school.com.cn/jsref/jsref_slice_array.asp) | 从某个已有的数组返回选定的元素                               |
+  | [sort()](http://www.w3school.com.cn/jsref/jsref_sort.asp)    | 对数组的元素进行排序                                         |
+  | [splice()](http://www.w3school.com.cn/jsref/jsref_splice.asp) | 删除元素，并向数组添加新元素。                               |
+  | [toSource()](http://www.w3school.com.cn/jsref/jsref_tosource_array.asp) | 返回该对象的源代码。                                         |
+  | [toString()](http://www.w3school.com.cn/jsref/jsref_toString_array.asp) | 把数组转换为字符串，并返回结果。                             |
+  | [toLocaleString()](http://www.w3school.com.cn/jsref/jsref_toLocaleString_array.asp) | 把数组转换为本地数组，并返回结果。                           |
+  | [unshift()](http://www.w3school.com.cn/jsref/jsref_unshift.asp) | 向数组的开头添加一个或更多元素，并返回新的长度。             |
+  | [valueOf()](http://www.w3school.com.cn/jsref/jsref_valueof_array.asp) | 返回数组对象的原始值                                         |
+
 ```javascript
 // 1 栈操作(先进后出)
-push()
-pop() 		//取出数组中的最后一项，修改length属性
+push()		//可向数组的末尾添加一个或多个元素，并返回新的长度。
+pop() 		//方法用于删除并返回数组的最后一个元素。
 // 2 队列操作(先进先出)
-push()
-shift()		//取出数组中的第一个元素，修改length属性
-unshift() 	//在数组最前面插入项，返回数组的长度
+push()		//可向数组的末尾添加一个或多个元素，并返回新的长度。
+shift()		//方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。
+unshift() 	//方法可向数组的开头添加一个或更多元素，并返回新的长度。
 // 3 排序方法
-reverse()	//翻转数组
+reverse()	// 方法用于颠倒数组中元素的顺序。
 sort(); 	//即使是数组sort也是根据字符，从小到大排序
 // 带参数的sort是如何实现的？
 // 4 操作方法
@@ -2541,6 +2625,53 @@ var b2 = b1 && true;		// 结果是什么
 ```
 
 ### String对象
+
+## String 对象属性
+
+| 属性                                                         | 描述                       |
+| ------------------------------------------------------------ | -------------------------- |
+| constructor                                                  | 对创建该对象的函数的引用   |
+| [length](http://www.w3school.com.cn/jsref/jsref_length_string.asp) | 字符串的长度               |
+| prototype                                                    | 允许您向对象添加属性和方法 |
+
+## String 对象方法
+
+| 方法                                                         | 描述                                                 |
+| ------------------------------------------------------------ | ---------------------------------------------------- |
+| [anchor()](http://www.w3school.com.cn/jsref/jsref_anchor.asp) | 创建 HTML 锚。                                       |
+| [big()](http://www.w3school.com.cn/jsref/jsref_big.asp)      | 用大号字体显示字符串。                               |
+| [blink()](http://www.w3school.com.cn/jsref/jsref_blink.asp)  | 显示闪动字符串。                                     |
+| [bold()](http://www.w3school.com.cn/jsref/jsref_bold.asp)    | 使用粗体显示字符串。                                 |
+| [charAt()](http://www.w3school.com.cn/jsref/jsref_charAt.asp) | 返回在指定位置的字符。                               |
+| [charCodeAt()](http://www.w3school.com.cn/jsref/jsref_charCodeAt.asp) | 返回在指定的位置的字符的 Unicode 编码。              |
+| [concat()](http://www.w3school.com.cn/jsref/jsref_concat_string.asp) | 连接字符串。                                         |
+| [fixed()](http://www.w3school.com.cn/jsref/jsref_fixed.asp)  | 以打字机文本显示字符串。                             |
+| [fontcolor()](http://www.w3school.com.cn/jsref/jsref_fontcolor.asp) | 使用指定的颜色来显示字符串。                         |
+| [fontsize()](http://www.w3school.com.cn/jsref/jsref_fontsize.asp) | 使用指定的尺寸来显示字符串。                         |
+| [fromCharCode()](http://www.w3school.com.cn/jsref/jsref_fromCharCode.asp) | 从字符编码创建一个字符串。                           |
+| [indexOf()](http://www.w3school.com.cn/jsref/jsref_indexOf.asp) | 检索字符串。                                         |
+| [italics()](http://www.w3school.com.cn/jsref/jsref_italics.asp) | 使用斜体显示字符串。                                 |
+| [lastIndexOf()](http://www.w3school.com.cn/jsref/jsref_lastIndexOf.asp) | 从后向前搜索字符串。                                 |
+| [link()](http://www.w3school.com.cn/jsref/jsref_link.asp)    | 将字符串显示为链接。                                 |
+| [localeCompare()](http://www.w3school.com.cn/jsref/jsref_localeCompare.asp) | 用本地特定的顺序来比较两个字符串。                   |
+| [match()](http://www.w3school.com.cn/jsref/jsref_match.asp)  | 找到一个或多个正则表达式的匹配。                     |
+| [replace()](http://www.w3school.com.cn/jsref/jsref_replace.asp) | 替换与正则表达式匹配的子串。                         |
+| [search()](http://www.w3school.com.cn/jsref/jsref_search.asp) | 检索与正则表达式相匹配的值。                         |
+| [slice()](http://www.w3school.com.cn/jsref/jsref_slice_string.asp) | 提取字符串的片断，并在新的字符串中返回被提取的部分。 |
+| [small()](http://www.w3school.com.cn/jsref/jsref_small.asp)  | 使用小字号来显示字符串。                             |
+| [split()](http://www.w3school.com.cn/jsref/jsref_split.asp)  | 把字符串分割为字符串数组。                           |
+| [strike()](http://www.w3school.com.cn/jsref/jsref_strike.asp) | 使用删除线来显示字符串。                             |
+| [sub()](http://www.w3school.com.cn/jsref/jsref_sub.asp)      | 把字符串显示为下标。                                 |
+| [substr()](http://www.w3school.com.cn/jsref/jsref_substr.asp) | 从起始索引号提取字符串中指定数目的字符。             |
+| [substring()](http://www.w3school.com.cn/jsref/jsref_substring.asp) | 提取字符串中两个指定的索引号之间的字符。             |
+| [sup()](http://www.w3school.com.cn/jsref/jsref_sup.asp)      | 把字符串显示为上标。                                 |
+| [toLocaleLowerCase()](http://www.w3school.com.cn/jsref/jsref_toLocaleLowerCase.asp) | 把字符串转换为小写。                                 |
+| [toLocaleUpperCase()](http://www.w3school.com.cn/jsref/jsref_toLocaleUpperCase.asp) | 把字符串转换为大写。                                 |
+| [toLowerCase()](http://www.w3school.com.cn/jsref/jsref_toLowerCase.asp) | 把字符串转换为小写。                                 |
+| [toUpperCase()](http://www.w3school.com.cn/jsref/jsref_toUpperCase.asp) | 把字符串转换为大写。                                 |
+| toSource()                                                   | 代表对象的源代码。                                   |
+| [toString()](http://www.w3school.com.cn/jsref/jsref_toString_string.asp) | 返回字符串。                                         |
+| [valueOf()](http://www.w3school.com.cn/jsref/jsref_valueOf_string.asp) | 返回某个字符串对象的原始值。                         |
 
 - 字符串的不可变
 
