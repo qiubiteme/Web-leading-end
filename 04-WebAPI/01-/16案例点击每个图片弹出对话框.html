@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$永远的24k纯帅$</title>
+  <style>
+    img{
+      width: 200px;
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+<img src="images/1.jpg" alt="" id="im1" />
+<img src="images/2.jpg" alt="" id="im2" />
+<img src="images/3.jpg" alt="" id="im3" />
+<script>
+//  document.getElementById("im1").onclick=function () {
+//    alert("被点了");
+//  };
+//  document.getElementById("im2").onclick=function () {
+//    alert("被点了");
+//  };
+//  document.getElementById("im3").onclick=function () {
+//    alert("被点了");
+//  };
+
+  //根据标签的名字获取图片标签,分别注册点击事件
+  var imgObjs=document.getElementsByTagName("img");
+  //循环遍历数组,获取每个图片标签,注册点击事件,添加事件处理函数
+  for(var i=0;i<imgObjs.length;i++){
+    imgObjs[i].onclick=function () {
+      alert("被点击了");
+    };
+  }
+</script>
+</body>
+</html>

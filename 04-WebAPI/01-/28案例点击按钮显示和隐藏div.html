@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$永远的24k纯帅$</title>
+  <style>
+    div {
+      width: 300px;
+      height: 200px;
+      background-color: yellow;
+      border: 2px solid red;
+    }
+
+    .cls {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<input type="button" value="隐藏" id="btn"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+  //点击按钮,通过类样式的方式设置div的显示和隐藏
+  my$("btn").onclick = function () {
+    // console.log(my$("dv").className);
+
+    //判断的是div是否应用了类样式
+    if (my$("dv").className != "cls") {
+      //现在是显示的,应该隐藏
+      my$("dv").className = "cls";
+      this.value = "显示";
+    } else {
+      //隐藏的状态----立刻显示
+      my$("dv").className = "";
+      this.value = "隐藏";
+    }
+  };
+</script>
+
+</body>
+</html>

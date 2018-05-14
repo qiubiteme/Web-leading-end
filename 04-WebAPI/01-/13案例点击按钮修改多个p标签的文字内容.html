@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$永远的24k纯帅$</title>
+
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/>
+<div id="dv1">
+  <p>哈哈,我又变帅了</p>
+  <p>哈哈,我又变帅了</p>
+  <p>哈哈,我又变帅了</p>
+  <p>哈哈,我又变帅了</p>
+  <p>哈哈,我又变帅了</p>
+</div>
+
+<div id="dv2">
+  <p>嘎嘎</p>
+  <p>嘎嘎</p>
+  <p>嘎嘎</p>
+  <p>嘎嘎</p>
+</div>
+<script>
+
+  //document.getElementsByTagName("标签的名字");返回的是一个伪数组,
+  //无论获取的是一个标签,还是多个标签,最终都是在数组中存储的,这行代码的返回值就是一个数组
+
+  //案例:点击按钮设置多个p标签的文字内容
+  //根据id获取按钮,注册点击事件,添加事件处理函数
+  document.getElementById("btn").onclick=function () {
+    //根据标签名字获取标签
+    var pObjs= document.getElementsByTagName("p");
+    //var pObjs=document.getElementById("dv1").getElementsByTagName("p");
+    //循环遍历这个数组
+    for(var i=0;i<pObjs.length;i++){
+      //每个p标签,设置文字
+      pObjs[i].innerText="我们都是p";
+    }
+
+  };
+
+
+</script>
+
+</body>
+</html>

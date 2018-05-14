@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$永远的24k纯帅$</title>
+
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/>
+<a id="ak" href="https://www.jiumodiary.com/">鸠摩搜书</a>
+<script>
+  //案例:点击按钮修改a标签的地址和热点文字
+
+  //根据id获取按钮,注册点击事件,添加事件处理函数
+  //  document.getElementById("btn").onclick = function () {
+  //    //根据id获取超链接,设置href属性
+  //    document.getElementById("ak").href = "http://www.itcast.cn";
+  //    //根据id获取超链接,设置文字内容
+  //    document.getElementById("ak").innerText = "传智播客";
+  //  };
+
+  //优化后的:
+
+  document.getElementById("btn").onclick = function () {
+    //根据id获取超链接,设置href属性
+    var aObj = document.getElementById("ak");
+    aObj.href = "http://www.itcast.cn";
+    //根据id获取超链接,设置文字内容
+    aObj.innerText = "传智播客";
+  };
+
+</script>
+
+</body>
+</html>

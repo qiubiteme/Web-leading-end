@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$永远的24k纯帅$</title>
+
+</head>
+<body>
+<input type="button" value="显示大图" id="btn"/>
+<img src="images/1-small.jpg" alt="" id="im">
+<script>
+  function my$(id) {
+    return document.getElementById(id);
+  }
+
+
+  my$("btn").onclick=function () {
+      my$("im").src="images/1.jpg";
+  };
+</script>
+
+</body>
+</html>

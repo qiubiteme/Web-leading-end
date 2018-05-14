@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$永远的24k纯帅$</title>
+
+</head>
+<body>
+<input type="button" value="修改文本框的值" id="btn"/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<script>
+
+  //根据id获取按钮,为按钮注册点击事件,添加事件处理函数
+  document.getElementById("btn").onclick = function () {
+    //获取所有的文本框
+    var inputs = document.getElementsByTagName("input");
+    for (var i = 0; i < inputs.length; i++) {
+      //判断这个元素是不是按钮
+      if (inputs[i].type != "button") {
+        inputs[i].value = "其实,助教喜欢小苏";
+      }
+    }
+  };
+</script>
+</body>
+</html>

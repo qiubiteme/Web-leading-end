@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$永远的24k纯帅$</title>
+  <style>
+    div{
+      width: 300px;
+      height: 200px;
+      background-color: darkmagenta;
+    }
+  </style>
+</head>
+<body>
+<input type="button" value="隐藏" id="btn"/>
+<input type="button" value="显示" id="btn2"/>
+<div id="dv">
+
+</div>
+<script src="common.js"></script>
+<script>
+  //根据id获取按钮,注册点击事件,添加事件处理函数
+  my$("btn").onclick=function () {
+      my$("dv").style.display="none";
+  };
+  my$("btn2").onclick=function () {
+    my$("dv").style.display="block";
+  };
+</script>
+</body>
+</html>

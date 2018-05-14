@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$永远的24k纯帅$</title>
+
+</head>
+<body>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<script>
+
+  //获取所有的按钮,分别注册点击事件
+  var btnObjs = document.getElementsByTagName("input");
+  //循环遍历所有的按钮
+  for (var i = 0; i < btnObjs.length; i++) {
+    //为每个按钮都要注册点击事件
+    btnObjs[i].onclick = function () {
+      //把所有的按钮的value值设置为默认的值:没怀孕
+      for (var j = 0; j < btnObjs.length; j++) {
+        btnObjs[j].value = "没怀孕";
+      }
+      //当前被点击的按钮设置为:怀孕了
+      this.value = "怀孕了";
+    };
+
+  }
+  //console.log(i);//6
+
+
+
+ //for循环是在页面加载的时候,执行完毕了
+//  for(var k=0;k<5;k++){
+//
+//  }
+//  console.log(k);//
+  //事件是在触发的时候,执行的
+</script>
+</body>
+</html>

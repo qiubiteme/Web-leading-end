@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$永远的24k纯帅$</title>
+
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/>
+<img src="images/cangjingkong.jpg" alt="哈哈" title="嘎嘎"/>
+<script>
+  document.getElementById("btn").onclick = function () {
+    //返回的是一个伪数组
+    var imgObjs = document.getElementsByTagName("img");
+    imgObjs[0].alt = "改了";
+    imgObjs[0].title = "现实吧";
+  };
+</script>
+</body>
+</html>
