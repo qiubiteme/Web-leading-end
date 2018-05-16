@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    div {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+<input type="button" value="摇起来" id="btn1"/>
+<input type="button" value="停止" id="btn2"/>
+<div id="dv">
+  <img src="images/heihei.jpg" alt=""/>
+  <img src="images/lyml.jpg" alt=""/>
+</div>
+<script src="common.js"></script>
+<script>
+  //点击按钮摇起来
+  var timeId="";
+  my$("btn1").onclick = function () {
+    timeId= setInterval(function () {
+      //随机数
+      var x = parseInt(Math.random() * 100 + 1);
+      var y = parseInt(Math.random() * 100 + 1);
+      //设置元素的left和top属性值
+      my$("dv").style.left = x + "px";
+      my$("dv").style.top = y + "px";
+    }, 10);
+  };
+
+  my$("btn2").onclick=function () {
+    clearInterval(timeId);
+  };
+</script>
+</body>
+</html>

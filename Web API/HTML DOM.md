@@ -181,7 +181,13 @@ getElementById() 方法返回带有指定 ID 的元素：
 ### 例子
 
 ```
-var element=document.getElementById("intro");
+<p id="intro">Hello World!</p>
+<p>本例演示 <b>getElementById</b> 方法！</p>
+
+<script>
+    x=document.getElementById("intro");
+    document.write("来自 intro 段落的文本：" + x.innerHTML);
+</script>
 ```
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_getelementbyid)
