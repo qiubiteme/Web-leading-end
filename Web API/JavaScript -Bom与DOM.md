@@ -299,8 +299,25 @@ getChildren(doc);
     }
 ```
 
-
 3.点击(每个)图片弹出对话框
+
+```
+<img src="images/1.jpg" alt="" id="img1"/>
+<img src="images/2.jpg" alt="" id="img2"/>
+<img src="images/3.jpg" alt="" id="img3"/>
+<script>
+    //根据标签的名字获取图片标签,分别注册点击事件
+    var imgObjs = document.getElementsByTagName("img");
+    //循环遍历数组,获取每个图片标签,注册点击事件,添加事件处理函数
+    for (var i = 0; i < imgObjs.length; i++) {
+        imgObjs[i].onclick = function () {
+
+            alert("被点击了" + this.id);
+        };
+    }
+</script>
+```
+
 4.点击图片设置自身宽和高
 5.点击按钮修改每个图片的title属性
 6.点击按钮显示哈哈(排他功能)
