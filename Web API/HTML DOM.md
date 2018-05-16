@@ -178,7 +178,7 @@ DOM 处理中的常见错误是希望元素节点包含文本。
 
 getElementById() 方法返回带有指定 ID 的元素：
 
-### 例子
+**例子**
 
 ```
 <p id="intro">Hello World!</p>
@@ -260,7 +260,7 @@ getElementById() 方法返回带有指定 ID 的元素：
 
 innerHTML 属性对于获取或替换 HTML 元素的内容很有用。
 
-### 实例
+**实例**
 
 下面的代码获取 id="intro" 的 <p> 元素的 innerHTML：
 
@@ -311,7 +311,7 @@ nodeValue 属性规定节点的值。
 
 下面的例子会取回 <p id="intro"> 标签的文本节点值：
 
-### 实例
+**实例**
 
 ```
 <html>
@@ -364,7 +364,7 @@ nodeType 属性返回节点的类型。nodeType 是只读的。
 
 getElementById() 方法返回带有指定 ID 的元素：
 
-### 语法
+**语法**
 
 ```
 node.getElementById("id");
@@ -372,7 +372,7 @@ node.getElementById("id");
 
 下面的例子获取 id="intro" 的元素：
 
-### 实例
+**实例**
 
 ```
 <p id="intro">Hello World!</p>
@@ -390,7 +390,7 @@ node.getElementById("id");
 
 getElementsByTagName() 返回带有指定标签名的所有元素。
 
-### 语法
+**语法**
 
 ```
 node.getElementsByTagName("tagname");
@@ -398,7 +398,7 @@ node.getElementsByTagName("tagname");
 
 下面的例子返回包含文档中所有 <p> 元素的列表：
 
-### 实例 1
+**实例 1**
 
 ```
 <p>Hello World!</p>
@@ -416,7 +416,7 @@ node.getElementsByTagName("tagname");
 
 下面的例子返回包含文档中所有 <p> 元素的列表，并且这些 <p> 元素应该是 id="main" 的元素的后代（子、孙等等）：
 
-### 实例 2
+**实例 2**
 
 ```
 <p>Hello World!</p>
@@ -472,7 +472,7 @@ document.getElementsByClassName("intro");
 
 下面的例子改变一个 <p> 元素的 HTML 内容：
 
-### 实例
+**实例**
 
 ```
 <p id="p1">Hello World!</p>
@@ -492,7 +492,7 @@ document.getElementsByClassName("intro");
 
 下面的例子改变一个段落的 HTML 样式：
 
-### 实例
+**实例**
 
 ```
 <p id="p1">Hello world!</p>
@@ -511,7 +511,7 @@ document.getElementsByClassName("intro");
 
 如需向 HTML DOM 添加新元素，您首先必须创建该元素（元素节点），然后把它追加到已有的元素上。
 
-### 实例
+**实例**
 
 ```
 <div id="div1">
@@ -545,7 +545,7 @@ HTML DOM 允许您在事件发生时执行代码。
 
 下面两个例子在按钮被点击时改变 <body> 元素的背景色：
 
-### 实例
+**实例**
 
 ```
 <input type="button" onclick="document.body.style.backgroundColor='lavender';"
@@ -556,7 +556,7 @@ value="Change background color" />
 
 在本例中，由函数执行相同的代码：
 
-### 实例
+**实例**
 
 ```
 <script>
@@ -573,7 +573,7 @@ value="Change background color" />
 
 下面的例子在按钮被点击时改变 <p> 元素的文本：
 
-### 实例
+**实例**
 
 ```
 <p id="p1">Hello world!</p>
@@ -599,7 +599,7 @@ value="Change background color" />
 
 如需向 HTML DOM 添加新元素，您首先必须创建该元素，然后把它追加到已有的元素上。
 
-### 实例
+**实例**
 
 ```
 <div id="div1">
@@ -619,7 +619,7 @@ value="Change background color" />
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_elementcreate)
 
-### 例子解释
+**例子解释**
 
 这段代码创建了一个新的 <p> 元素：
 
@@ -659,7 +659,7 @@ element.appendChild(para);
 
 如果不希望如此，您可以使用 insertBefore() 方法：插入到指定的位置
 
-### 实例
+**实例**
 
 ```
 <div id="div1">
@@ -687,7 +687,7 @@ element.appendChild(para);
 
 如需删除 HTML 元素，您必须清楚该元素的父元素：
 
-### 实例
+**实例**
 
 ```
 <div id="div1">
@@ -703,7 +703,7 @@ element.appendChild(para);
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_elementremove)
 
-### 例子解释
+**例子解释**
 
 这个 HTML 文档包含一个带有两个子节点（两个 <p> 元素）的 <div> 元素：
 
@@ -748,9 +748,7 @@ child.parentNode.removeChild(child);
 
 如需替换 HTML DOM 中的元素，请使用 replaceChild() 方法：
 
-
-
-### 实例
+**实例**
 
 ```
 <div id="div1">
@@ -799,7 +797,7 @@ HTML 事件的例子：
 
 在本例中，当用户点击时，会改变 <h1> 元素的内容：
 
-### 实例
+**实例**
 
 ```
 <h1 onclick="this.innerHTML='hello!'">请点击这段文本!</h1>
@@ -809,7 +807,7 @@ HTML 事件的例子：
 
 在本例中，会从事件处理程序中调用函数：
 
-### 实例
+**实例**
 
 ```
 <script>
@@ -827,7 +825,7 @@ HTML 事件的例子：
 
 如需向 HTML 元素分配事件，您可以使用事件属性。
 
-### 实例
+**实例**
 
 向 button 元素分配一个 onclick 事件：
 
@@ -850,7 +848,7 @@ HTML 事件的例子：
 
 HTML DOM 允许您使用 JavaScript 向 HTML 元素分配事件：
 
-### 实例
+**实例**
 
 为 button 元素分配 onclick 事件：
 
@@ -888,10 +886,22 @@ onload 事件可用于检查访客的浏览器类型和版本，以便基于这�
 
 onload 和 onunload 事件可用于处理 cookies。
 
-### 实例
+**实例**
 
 ```
 <body onload="checkCookies()">
+<script>
+    function checkCookies() {
+        if (navigator.cookieEnabled == true) {
+            alert("Cookies are enabled")
+        }
+        else {
+            alert("Cookies are not enabled")
+        }
+    }
+</script>
+<p>弹出的提示框会告诉你浏览器是否已启用 cookie。</p>
+</body>
 ```
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onload)
@@ -902,10 +912,19 @@ onchange 事件常用于输入字段的验证。
 
 下面的例子展示了如何使用 onchange。当用户改变输入字段的内容时，将调用 upperCase() 函数。
 
-### 实例
+**实例**
 
 ```
-<input type="text" id="fname" onchange="upperCase()">
+<script>
+    function myFunction() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+</script>
+</head>
+<body>
+请输入你的英文名：<input type="text" id="fname" onchange="myFunction()">
+<p>当你离开输入框时，被触发的函数会把你输入的文本转换为大写字母。</p>
 ```
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onchange)
@@ -914,11 +933,23 @@ onchange 事件常用于输入字段的验证。
 
 onmouseover 和 onmouseout 事件可用于在鼠标指针移动到或离开元素时触发函数。
 
-### 实例
+**实例**
 
 一个简单的 onmouseover-onmouseout 例子：
 
-把鼠标移上来
+```
+<div onmouseover="mOver(this)" onmouseout="mOut(this)">
+	Mouse Over Me
+</div>
+<script>
+    function mOver(obj) {
+        obj.innerHTML = "谢谢你"
+    }
+    function mOut(obj) {
+        obj.innerHTML = "把鼠标指针移动到上面"
+    }
+</script>
+```
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onmouseover)
 
@@ -926,14 +957,232 @@ onmouseover 和 onmouseout 事件可用于在鼠标指针移动到或离开元�
 
 onmousedown、onmouseup 以及 onclick 事件是鼠标点击的全部过程。首先当某个鼠标按钮被点击时，触发 onmousedown 事件，然后，当鼠标按钮被松开时，会触发 onmouseup 事件，最后，当鼠标点击完成时，触发 onclick 事件。
 
-### 实例
+**实例**
 
 一个简单的 onmousedown-onmouseup 实例：
 
-点击这里
+```
+<div
+        onmousedown="mDown(this)"
+        onmouseup="mUp(this)"
+        onclick="mEnd(this)"
+        style="background-color:orange;width:200px;height:50px;padding-top:25px;text-align:center;">
+    点击这里
+</div>
+<script>
+    function mDown(obj) {
+        obj.style.backgroundColor = "blue";
+        obj.innerHTML = "点击鼠标改变颜色"
+    }
+    function mUp(obj) {
+        obj.style.backgroundColor = "red";
+        obj.innerHTML = "松开鼠标改变颜色"
+    }
+    function mEnd(obj){
+        obj.style.backgroundColor = "greenyellow";
+        obj.innerHTML = "事件结束改变颜色"
+    }
+</script>
+```
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onmousedown)
 
 ## HTML DOM 事件对象参考手册
 
 如需每个事件的完整描述和例子，请访问我们的 [HTML DOM 参考手册](http://www.w3school.com.cn/jsref/index.asp)。
+
+
+
+# DOM - 导航
+
+通过 HTML DOM，您能够使用节点关系在节点树中导航。
+
+## HTML DOM 节点列表
+
+getElementsByTagName() 方法返回*节点列表*。节点列表是一个节点数组。
+
+下面的代码选取文档中的所有 <p> 节点：
+
+**实例**
+
+```
+var x=document.getElementsByTagName("p");
+```
+
+可以通过下标号访问这些节点。如需访问第二个 <p>，您可以这么写：
+
+```
+<p>Hello World!</p>
+<p>DOM 很有用！</p>
+<script>
+    x = document.getElementsByTagName("p");
+    document.write("第二段的 innerHTML 是: " + x[1].innerHTML);
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_nodelist)
+
+注释：下标号从 0 开始。
+
+## HTML DOM 节点列表长度
+
+length 属性定义节点列表中节点的数量。
+
+您可以使用 length 属性来循环节点列表：
+
+**实例**
+
+```
+<p>Hello World!</p>
+<p>DOM 很有用！</p>
+<p>本例演示 <b>length</b> 属性。</p>
+<script>
+    x = document.getElementsByTagName("p");
+    for (i = 0; i < x.length; i++) {
+        document.write(x[i].innerHTML);
+        document.write("<br>");
+    }
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_nodelist_length)
+
+**例子解释：**
+
+- 获取所有 <p> 元素节点
+- 输出每个 <p> 元素的文本节点的值
+
+## 导航节点关系
+
+您能够使用三个节点属性：parentNode、firstChild 以及 lastChild ，在文档结构中进行导航。
+
+请看下面的 HTML 片段：
+
+```
+<html>
+<body>
+
+<p>Hello World!</p>
+<div>
+  <p>DOM 很有用!</p>
+  <p>本例演示节点关系。</p>
+</div>
+
+</body>
+</html>
+```
+
+- 首个 <p> 元素是 <body> 元素的首个子元素（firstChild）
+- <div> 元素是 <body> 元素的最后一个子元素（lastChild）
+- <body> 元素是首个 <p> 元素和 <div> 元素的父节点（parentNode）
+
+firstChild 属性可用于访问元素的文本：
+
+### 实例
+
+```
+<html>
+<body>
+<body>
+<p id="intro">Hello World!</p>
+
+<script>
+    x = document.getElementById("intro");
+    document.write(x.firstChild.nodeValue);
+</script>
+</body>
+</html>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_firstchild)
+
+## DOM 根节点
+
+这里有两个特殊的属性，可以访问全部文档：
+
+- document.documentElement - 全部文档
+- document.body - 文档的主体
+
+**实例 document.body - 文档的主体**
+
+```
+<p>Hello World!</p>
+<div>
+    <p>DOM 很有用!</p>
+    <p>本例演示 <b>document.body</b> 属性。</p>
+</div>
+
+<script>
+    alert(document.body.innerHTML);
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_root)
+
+**实例document.documentElement - 全部文档**
+
+全部文档节点,不包含HTML根节点
+
+```
+<p>Hello World!</p>
+<div>
+    <p>DOM 很有用!</p>
+    <p>本例演示 <b>document.body</b> 属性。</p>
+</div>
+
+<script>
+    alert(document.documentElement .innerHTML);
+</script>
+```
+
+
+
+## childNodes 和 nodeValue
+
+除了 innerHTML 属性，您也可以使用 childNodes 和 nodeValue 属性来获取元素的内容。
+
+下面的代码获取 id="intro" 的 <p> 元素的值：
+
+### 实例
+
+```
+<p id="intro">Hello World!</p>
+
+<script>
+    var txt = document.getElementById("intro").childNodes[0].nodeValue;
+    document.write(txt);
+</script>
+
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_childnodes_nodevalue)
+
+在上面的例子中，getElementById 是一个方法，而 childNodes 和 nodeValue 是属性。
+
+在本教程中，我们将使用 innerHTML 属性。不过，学习上面的方法有助于对 DOM 树结构和导航的理解。
+
+# HTML DOM 总结
+
+本教程已经向您讲解了如何使用 HTML DOM 来增强网站的动态交互性。
+
+您已经学会了如何操作 HTML 元素以响应不同的场景。
+
+如需更多有关 HTML DOM 的信息，请访问我们的 [HTML DOM 实例](http://www.w3school.com.cn/example/hdom_examples.asp)和 [HTML DOM 参考手册](http://www.w3school.com.cn/jsref/index.asp)。
+
+## 现在您已经学习了 HTML DOM，下一步呢？
+
+在本教程中，我们已通过在客户端（在浏览器中）使用脚本来创建动态网页。
+
+也可以通过在服务器上使用脚本来增加网页的动态性。
+
+通过服务器端脚本，您能够编辑、添加或更改网页内容。您能够对提交自 HTML 表单的数据做出响应，访问数据或数据库，并向浏览器返回结果，为不同的用户定制页面。
+
+在 W3School，您可以学习以下服务器端脚本教程：
+
+[PHP 教程](http://www.w3school.com.cn/php/index.asp)
+
+[ASP 教程](http://www.w3school.com.cn/asp/index.asp)
+
+[.NET 教程](http://www.w3school.com.cn/aspnet/index.asp)
+
+您也可以通过我们的服务器端脚本系列教程页面，快速了解各种不同的服务器端脚本技术。
