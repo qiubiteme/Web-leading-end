@@ -268,7 +268,24 @@ getChildren(doc);
 ## 案例
 
 1.点击按钮弹出对话框
+
+```
+<input type="button" value="弹出对话框" id="btn"/>
+<script>
+    //最终极的点击按钮弹出对话框的代码
+    document.getElementById("btn").onclick = function () {
+        alert("弹出弹出对话框")
+    };
+</script>
+```
+
 2.点击按钮修改超链接的地址和热点文字
+
+```
+
+```
+
+
 3.点击(每个)图片弹出对话框
 4.点击图片设置自身宽和高
 5.点击按钮修改每个图片的title属性
