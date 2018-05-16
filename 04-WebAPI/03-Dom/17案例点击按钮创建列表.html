@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    div {
+      width: 300px;
+      height: 400px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+<input type="button" value="创建列表" id="btn"/>
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+
+  //  my$("btn").onclick=function () {
+  //    my$("dv").innerHTML="<ul><li>杨过</li><li>小龙女</li><li>张无忌</li>  <li>张三丰</li></ul>";
+  //  };
+
+
+  var names = ["杨过", "郭靖", "张无忌", "张三丰", "乔峰", "段飞", "丁棚"];
+  my$("btn").onclick = function () {
+    var str = "<ul style='list-style-type: none;cursor: pointer'>";
+    //根据循环创建对应对数的li
+    for (var i = 0; i < names.length; i++) {
+      str += "<li>" + names[i] + "</li>";
+    }
+    str += "</ul>";
+    my$("dv").innerHTML = str;
+
+    //代码执行到这里,li已经有了
+    //获取所有的li,遍历,添加鼠标进入事件,鼠标离开事件
+    var list = my$("dv").getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+      //鼠标进入
+      list[i].onmouseover = function () {
+        this.style.backgroundColor = "yellow";
+      };
+      //鼠标离开
+      list[i].onmouseout = function () {
+        this.style.backgroundColor = "";
+      };
+
+    }
+
+  };
+
+
+</script>
+</body>
+</html>

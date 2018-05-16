@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    div {
+      width: 300px;
+      height: 450px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+<input type="button" value="变色" id="btn"/>
+<div id="dv">
+  <span>这是span</span>
+  <p>这是p</p>
+  <span>这是span</span>
+  <p>这是p</p>
+  <span>这是span</span>
+  <p>这是p</p>
+  <span>这是span</span>
+  <a href="http://www.baidu.com">百度</a>
+</div>
+<script src="common.js"></script>
+<script>
+
+  my$("btn").onclick = function () {
+    //先获取div
+    var dvObj = my$("dv");
+    //获取里面所有的子节点
+    var nodes = dvObj.childNodes;
+    //循环遍历所有的子节点
+    for (var i = 0; i < nodes.length; i++) {
+      //判断这个子节点是不是p标签
+      if (nodes[i].nodeType == 1 && nodes[i].nodeName == "P") {
+        nodes[i].style.backgroundColor = "red";
+      }
+    }
+  };
+  //点击按钮,设置p变色---节点的方式做
+
+
+</script>
+</body>
+</html>
