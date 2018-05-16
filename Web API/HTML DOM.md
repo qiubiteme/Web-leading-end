@@ -264,7 +264,7 @@ innerHTML 属性对于获取或替换 HTML 元素的内容很有用。
 
 下面的代码获取 id="intro" 的 <p> 元素的 innerHTML：
 
-### 实例
+**实例**
 
 ```
 <html>
@@ -343,3 +343,424 @@ nodeType 属性返回节点的类型。nodeType 是只读的。
 | 文本     | 3        |
 | 注释     | 8        |
 | 文档     | 9        |
+
+
+
+# DOM 访问
+
+访问 HTML DOM - 查找 HTML 元素。
+
+## 访问 HTML 元素（节点）
+
+访问 HTML 元素等同于访问节点
+
+您能够以不同的方式来访问 HTML 元素：
+
+- 通过使用 getElementById() 方法
+- 通过使用 getElementsByTagName() 方法
+- 通过使用 getElementsByClassName() 方法
+
+## getElementById() 方法
+
+getElementById() 方法返回带有指定 ID 的元素：
+
+### 语法
+
+```
+node.getElementById("id");
+```
+
+下面的例子获取 id="intro" 的元素：
+
+### 实例
+
+```
+<p id="intro">Hello World!</p>
+<p>本例演示 <b>getElementById</b> 方法！</p>
+
+<script>
+    x = document.getElementById("intro");
+    document.write("<p>来自 intro 段落的文本：" + x.innerHTML + "</p>");
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_getelementbyid)
+
+## getElementsByTagName() 方法
+
+getElementsByTagName() 返回带有指定标签名的所有元素。
+
+### 语法
+
+```
+node.getElementsByTagName("tagname");
+```
+
+下面的例子返回包含文档中所有 <p> 元素的列表：
+
+### 实例 1
+
+```
+<p>Hello World!</p>
+<p>DOM 很有用！</p>
+<p>本例演示 <b>getElementsByTagName</b> 方法。</p>
+
+<script>
+    x = document.getElementsByTagName("p");
+    document.write("第1段的文本: " + x[0].innerHTML);
+    document.write("第2段的文本: " + x[1].innerHTML);
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_getelementsbytagname)
+
+下面的例子返回包含文档中所有 <p> 元素的列表，并且这些 <p> 元素应该是 id="main" 的元素的后代（子、孙等等）：
+
+### 实例 2
+
+```
+<p>Hello World!</p>
+
+<div id="main">
+    <p>DOM 很有用！</p>
+    <p>本例演示 <b>getElementsByTagName</b> 方法。</p>
+</div>
+
+<script>
+    x = document.getElementById("main").getElementsByTagName("p");
+    document.write("div 中的第一段的文本: " + x[0].innerHTML);
+    document.write("div 中的第2段的文本: " + x[1].innerHTML);
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_getelementsbytagname2)
+
+## getElementsByClassName() 方法
+
+如果您希望查找带有相同类名的所有 HTML 元素，请使用这个方法：
+
+```
+document.getElementsByClassName("intro");
+```
+
+上面的例子返回包含 class="intro" 的所有元素的一个列表：
+
+注释：getElementsByClassName() 在 Internet Explorer 5,6,7,8 中无效。
+
+
+
+# DOM - 修改HTML内容
+
+修改 HTML = 改变元素、属性、样式和事件。
+
+## 修改 HTML 元素
+
+修改 HTML DOM 意味着许多不同的方面：
+
+- 改变 HTML 内容
+- 改变 CSS 样式
+- 改变 HTML 属性
+- 创建新的 HTML 元素
+- 删除已有的 HTML 元素
+- 改变事件（处理程序）
+
+在接下来的章节，我们会深入学习修改 HTML DOM 的常用方法。
+
+## 创建 HTML 内容
+
+改变元素内容的最简答的方法是使用 innerHTML 属性。
+
+下面的例子改变一个 <p> 元素的 HTML 内容：
+
+### 实例
+
+```
+<p id="p1">Hello World!</p>
+<script>
+    document.getElementById("p1").innerHTML = "New text!";
+</script> 
+<p>上面的段落被一段脚本改变了。</p>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_changetext)
+
+提示：我们将在下面的章节为您解释例子中的细节。
+
+## 改变 HTML 样式
+
+通过 HTML DOM，您能够访问 HTML 元素的样式对象。
+
+下面的例子改变一个段落的 HTML 样式：
+
+### 实例
+
+```
+<p id="p1">Hello world!</p>
+<p id="p2">Hello world!</p>
+
+<script>
+    document.getElementById("p2").style.color = "blue";
+    document.getElementById("p2").style.fontFamily = "Arial";
+    document.getElementById("p2").style.fontSize = "50px";
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_changestyle)
+
+## 创建新的 HTML 元素
+
+如需向 HTML DOM 添加新元素，您首先必须创建该元素（元素节点），然后把它追加到已有的元素上。
+
+### 实例
+
+```
+<div id="div1">
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
+</div>
+<script>
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild(node);
+    var element = document.getElementById("div1");
+    element.appendChild(para);
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_elementcreate)
+
+
+
+## 使用事件
+
+HTML DOM 允许您在事件发生时执行代码。
+
+当 HTML 元素”有事情发生“时，浏览器就会生成事件：
+
+- 在元素上点击
+- 加载页面
+- 改变输入字段
+
+你可以在下一章学习更多有关事件的内容。
+
+下面两个例子在按钮被点击时改变 <body> 元素的背景色：
+
+### 实例
+
+```
+<input type="button" onclick="document.body.style.backgroundColor='lavender';"
+value="Change background color" />
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_changebackground)
+
+在本例中，由函数执行相同的代码：
+
+### 实例
+
+```
+<script>
+    function ChangeBackground() {
+        document.body.style.backgroundColor = "lavender";
+    }
+</script>
+
+<input type="button" onclick="ChangeBackground()"
+       value="Change background color"/>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_changebackground2)
+
+下面的例子在按钮被点击时改变 <p> 元素的文本：
+
+### 实例
+
+```
+<p id="p1">Hello world!</p>
+
+<script>
+    function ChangeText() {
+        document.getElementById("p1").innerHTML = "New text!";
+    }
+</script>
+
+<input type="button" onclick="ChangeText()" value="改变文本"/>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_changetext2)
+
+
+
+# DOM - 元素
+
+添加、删除和替换 HTML 元素。
+
+## 创建新的 HTML 元素 - appendChild()
+
+如需向 HTML DOM 添加新元素，您首先必须创建该元素，然后把它追加到已有的元素上。
+
+### 实例
+
+```
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+var para=document.createElement("p");
+var node=document.createTextNode("This is new.");
+para.appendChild(node);
+
+var element=document.getElementById("div1");
+element.appendChild(para);
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_elementcreate)
+
+### 例子解释
+
+这段代码创建了一个新的 <p> 元素：
+
+```
+var para=document.createElement("p");
+```
+
+如需向 <p> 元素添加文本，您首先必须创建文本节点。这段代码创建文本节点：
+
+```
+var node=document.createTextNode("This is a new paragraph.");
+```
+
+然后您必须向 <p> 元素追加文本节点：
+
+```
+para.appendChild(node);
+```
+
+最后，您必须向已有元素追加这个新元素。
+
+这段代码查找到一个已有的元素：
+
+```
+var element=document.getElementById("div1");
+```
+
+这段代码向这个已存在的元素追加新元素：
+
+```
+element.appendChild(para);
+```
+
+## 创建新的 HTML 元素 - insertBefore()
+
+上一个例子中的 appendChild() 方法，将新元素作为父元素的最后一个子元素进行添加。
+
+如果不希望如此，您可以使用 insertBefore() 方法：
+
+### 实例
+
+```
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+var para=document.createElement("p");
+var node=document.createTextNode("This is new.");
+para.appendChild(node);
+
+var element=document.getElementById("div1");
+var child=document.getElementById("p1");
+element.insertBefore(para,child);
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_elementcreate2)
+
+## 删除已有的 HTML 元素
+
+如需删除 HTML 元素，您必须清楚该元素的父元素：
+
+### 实例
+
+```
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+<script>
+var parent=document.getElementById("div1");
+var child=document.getElementById("p1");
+parent.removeChild(child);
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_elementremove)
+
+### 例子解释
+
+这个 HTML 文档包含一个带有两个子节点（两个 <p> 元素）的 <div> 元素：
+
+```
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+```
+
+查找 id="div1" 的元素：
+
+```
+var parent=document.getElementById("div1");
+```
+
+查找 id="p1" 的 <p> 元素：
+
+```
+var child=document.getElementById("p1");
+```
+
+从父元素中删除子元素：
+
+```
+parent.removeChild(child);
+```
+
+提示：能否在不引用父元素的情况下删除某个元素？
+
+很抱歉。DOM 需要了解您需要删除的元素，以及它的父元素。
+
+这里提供一个常用的解决方法：找到您需要删除的子元素，然后使用 parentNode 属性来查找其父元素：
+
+```
+var child=document.getElementById("p1");
+child.parentNode.removeChild(child);
+```
+
+## 替换 HTML 元素
+
+如需替换 HTML DOM 中的元素，请使用 replaceChild() 方法：
+
+### 实例
+
+```
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+var para=document.createElement("p");
+var node=document.createTextNode("This is new.");
+para.appendChild(node);
+
+var parent=document.getElementById("div1");
+var child=document.getElementById("p1");
+parent.replaceChild(para,child);
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_elementreplace)
