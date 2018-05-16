@@ -12,6 +12,19 @@
 <input type="button" value="没怀孕"/>
 <input type="button" value="没怀孕"/>
 <input type="button" value="没怀孕"/>
+<p>天才</p><p>天才</p><p>天才</p><p>天才</p>
+<script>
+    var pObjList = document.getElementsByTagName("p");
+    for (i = 0; i < pObjList.length; i++) {
+        pObjList[i].onclick = function () {
+            for (var j = 0; j < pObjList.length; j++) {
+                pObjList[j].innerText = "天才";
+            }
+            this.innerText = "疯子"
+        }
+    }
+
+</script>
 <script>
 
     //获取所有的按钮,分别注册点击事件

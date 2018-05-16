@@ -319,9 +319,59 @@ getChildren(doc);
 ```
 
 4.点击图片设置自身宽和高
-5.点击按钮修改每个图片的title属性
+
+```
+<img src="images/1.jpg" alt="" id="img1"/>
+<script>
+    var imgObj = document.getElementById("img1");
+    imgObj.onclick = function () {
+        imgObj.style.width = "400px"
+        imgObj.style.height = "400px"
+    }
+</script>
+```
+
+5.点击按钮修改图片的title属性
+
+```
+<img src="images/1.jpg" alt="" id="img1"/>
+<img src="images/2.jpg" alt="" id="img2"/>
+<img src="images/3.jpg" alt="" id="img3"/>
+<script>
+    var imgObjList = document.getElementsByTagName("img");
+    for (i = 0; i < imgObjList.length; i++) {
+        imgObjList[i].onclick = function () {
+            this.style.width = "400px"
+            this.style.height = "400px"
+            this.title = (this.id)
+        }
+    }
+</script>
+```
+
 6.点击按钮显示哈哈(排他功能)
+
+```
+<p>天才</p><p>天才</p><p>天才</p><p>天才</p>
+<script>
+    var pObjList = document.getElementsByTagName("p");
+    for (i = 0; i < pObjList.length; i++) {
+        pObjList[i].onclick = function () {
+            for (var j = 0; j < pObjList.length; j++) {
+                pObjList[j].innerText = "天才";
+            }
+            this.innerText = "疯子"
+        }
+    }
+```
+
 7.点击按钮显示和隐藏div
+
+```
+
+```
+
+
 8.显示和隐藏二维码
 9.点击按钮修改所有p标签内容
 10.点击按钮修改所有文本框内容

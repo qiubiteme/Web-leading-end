@@ -12,9 +12,19 @@
 </head>
 <body>
 <img src="images/1.jpg" alt="" id="img1"/>
-
 <img src="images/2.jpg" alt="" id="img2"/>
 <img src="images/3.jpg" alt="" id="img3"/>
+<script>
+    var imgObjList = document.getElementsByTagName("img");
+    for (i = 0; i < imgObjList.length; i++) {
+        imgObjList[i].onclick = function () {
+            this.style.width = "400px"
+            this.style.height = "400px"
+            this.title = (this.id)
+        }
+    }
+</script>
+
 
 <script>
     //  document.getElementById("im1").onclick=function () {
@@ -30,12 +40,12 @@
     //根据标签的名字获取图片标签,分别注册点击事件
     var imgObjs = document.getElementsByTagName("img");
     //循环遍历数组,获取每个图片标签,注册点击事件,添加事件处理函数
-    for (var i = 0; i < imgObjs.length; i++) {
-        imgObjs[i].onclick = function () {
+    /* for (var i = 0; i < imgObjs.length; i++) {
+         imgObjs[i].onclick = function () {
 
-            alert("被点击了" + this.id);
-        };
-    }
+             alert("被点击了" + this.id);
+         };
+     }*/
 </script>
 </body>
 </html>
