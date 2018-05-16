@@ -603,17 +603,17 @@ value="Change background color" />
 
 ```
 <div id="div1">
-<p id="p1">This is a paragraph.</p>
-<p id="p2">This is another paragraph.</p>
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
 </div>
 
 <script>
-var para=document.createElement("p");
-var node=document.createTextNode("This is new.");
-para.appendChild(node);
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild(node);
 
-var element=document.getElementById("div1");
-element.appendChild(para);
+    var element = document.getElementById("div1");
+    element.appendChild(para);
 </script>
 ```
 
@@ -657,24 +657,27 @@ element.appendChild(para);
 
 上一个例子中的 appendChild() 方法，将新元素作为父元素的最后一个子元素进行添加。
 
-如果不希望如此，您可以使用 insertBefore() 方法：
+如果不希望如此，您可以使用 insertBefore() 方法：插入到指定的位置
 
 ### 实例
 
 ```
 <div id="div1">
-<p id="p1">This is a paragraph.</p>
-<p id="p2">This is another paragraph.</p>
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
 </div>
 
 <script>
-var para=document.createElement("p");
-var node=document.createTextNode("This is new.");
-para.appendChild(node);
-
-var element=document.getElementById("div1");
-var child=document.getElementById("p1");
-element.insertBefore(para,child);
+	//创建元素
+    var para = document.createElement("p");
+    //创建文本节点
+    var node = document.createTextNode("This is new.");
+    //给指定元素追加文本节点
+    para.appendChild(node);
+    var element = document.getElementById("div1");
+    var child = document.getElementById("p2");
+    //插入到指定元素前面
+    element.insertBefore(para, child);
 </script>
 ```
 
@@ -688,13 +691,13 @@ element.insertBefore(para,child);
 
 ```
 <div id="div1">
-<p id="p1">This is a paragraph.</p>
-<p id="p2">This is another paragraph.</p>
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
 </div>
 <script>
-var parent=document.getElementById("div1");
-var child=document.getElementById("p1");
-parent.removeChild(child);
+    var parent = document.getElementById("div1");
+    var child = document.getElementById("p1");
+    parent.removeChild(child);
 </script>
 ```
 
@@ -737,6 +740,7 @@ parent.removeChild(child);
 
 ```
 var child=document.getElementById("p1");
+//获取父元素
 child.parentNode.removeChild(child);
 ```
 
@@ -744,23 +748,192 @@ child.parentNode.removeChild(child);
 
 如需替换 HTML DOM 中的元素，请使用 replaceChild() 方法：
 
+
+
 ### 实例
 
 ```
 <div id="div1">
-<p id="p1">This is a paragraph.</p>
-<p id="p2">This is another paragraph.</p>
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
 </div>
-
 <script>
-var para=document.createElement("p");
-var node=document.createTextNode("This is new.");
-para.appendChild(node);
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild(node);
 
-var parent=document.getElementById("div1");
-var child=document.getElementById("p1");
-parent.replaceChild(para,child);
+    var parent = document.getElementById("div1");
+    var child = document.getElementById("p1");
+    //替换 HTML 元素
+    parent.replaceChild(para, child);
 </script>
 ```
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_elementreplace)
+
+
+
+# DOM - 事件
+
+HTML DOM 允许 JavaScript 对 HTML 事件作出反应。。
+
+## 对事件作出反应
+
+当事件发生时，可以执行 JavaScript，比如当用户点击一个 HTML 元素时。
+
+如需在用户点击某个元素时执行代码，请把 JavaScript 代码添加到 HTML 事件属性中：
+
+```
+onclick=JavaScript
+```
+
+HTML 事件的例子：
+
+- 当用户点击鼠标时
+- 当网页已加载时
+- 当图片已加载时
+- 当鼠标移动到元素上时
+- 当输入字段被改变时
+- 当 HTML 表单被提交时
+- 当用户触发按键时
+
+在本例中，当用户点击时，会改变 <h1> 元素的内容：
+
+### 实例
+
+```
+<h1 onclick="this.innerHTML='hello!'">请点击这段文本!</h1>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onclick)
+
+在本例中，会从事件处理程序中调用函数：
+
+### 实例
+
+```
+<script>
+    function changetext(id) {
+        id.innerHTML = "hello!";
+    }
+</script>
+<h1 onclick="changetext(this)">请点击这段文本!</h1>
+
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onclick2)
+
+## HTML 事件属性
+
+如需向 HTML 元素分配事件，您可以使用事件属性。
+
+### 实例
+
+向 button 元素分配一个 onclick 事件：
+
+```
+<p>点击按钮来执行 <b>displayDate()</b> 函数。</p>
+<button onclick="displayDate()">试一试</button>
+<script>
+    function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+    }
+</script>
+<p id="demo"></p>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event)
+
+在上面的例子中，当点击按钮时，会执行名为 displayDate 的函数。
+
+## 使用 HTML DOM 来分配事件
+
+HTML DOM 允许您使用 JavaScript 向 HTML 元素分配事件：
+
+### 实例
+
+为 button 元素分配 onclick 事件：
+
+```
+<p>点击按钮来执行 <b>displayDate()</b> 函数。</p>
+<button id="myBtn">试一试</button>
+<script>
+    document.getElementById("myBtn").onclick = function () {
+        displayDate()
+    };
+    function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+    }
+</script>
+<p id="demo"></p>
+<script>
+	//再次点击刷新时间
+    document.getElementById("myBtn").onclick = function () {
+        displayDate()
+    };
+</script>
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event2)
+
+在上面的例子中，名为 displayDate 的函数被分配给了 id=myButn" 的 HTML 元素。
+
+当按钮被点击时，将执行函数。
+
+## onload 和 onunload 事件
+
+当用户进入或离开页面时，会触发 onload 和 onunload 事件。
+
+onload 事件可用于检查访客的浏览器类型和版本，以便基于这些信息来加载不同版本的网页。
+
+onload 和 onunload 事件可用于处理 cookies。
+
+### 实例
+
+```
+<body onload="checkCookies()">
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onload)
+
+## onchange 事件
+
+onchange 事件常用于输入字段的验证。
+
+下面的例子展示了如何使用 onchange。当用户改变输入字段的内容时，将调用 upperCase() 函数。
+
+### 实例
+
+```
+<input type="text" id="fname" onchange="upperCase()">
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onchange)
+
+## onmouseover 和 onmouseout 事件
+
+onmouseover 和 onmouseout 事件可用于在鼠标指针移动到或离开元素时触发函数。
+
+### 实例
+
+一个简单的 onmouseover-onmouseout 例子：
+
+把鼠标移上来
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onmouseover)
+
+## onmousedown、onmouseup 以及 onclick 事件
+
+onmousedown、onmouseup 以及 onclick 事件是鼠标点击的全部过程。首先当某个鼠标按钮被点击时，触发 onmousedown 事件，然后，当鼠标按钮被松开时，会触发 onmouseup 事件，最后，当鼠标点击完成时，触发 onclick 事件。
+
+### 实例
+
+一个简单的 onmousedown-onmouseup 实例：
+
+点击这里
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_event_onmousedown)
+
+## HTML DOM 事件对象参考手册
+
+如需每个事件的完整描述和例子，请访问我们的 [HTML DOM 参考手册](http://www.w3school.com.cn/jsref/index.asp)。
