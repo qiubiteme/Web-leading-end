@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$永远的24k纯帅$</title>
-  <style>
-    div {
-      width: 200px;
-      height: 50px;
-      background-color: green;
-      margin-top: 10px;
-    }
+    <meta charset="UTF-8">
+    <title>$永远的24k纯帅$</title>
+    <style>
+        div {
+            width: 200px;
+            height: 50px;
+            background-color: green;
+            margin-top: 10px;
+        }
 
-    .cls {
-      background-color: yellow;
-    }
-  </style>
+        .cls {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
 <p>这是一个p</p>
@@ -27,17 +27,17 @@
 <script src="common.js"></script>
 <script>
 
-  //点击按钮设置应用cls类样式的标签的背景颜色为红色
-  //getElementsByClassName();------>h5的
+    //点击按钮设置应用cls类样式的标签的背景颜色为红色
+    //getElementsByClassName();------>h5的
 
-  my$("btn").onclick = function () {
-    //根据类样式的名字来获取元素
-    var objs = document.getElementsByClassName("cls");
-    for (var i = 0; i < objs.length; i++) {
-      //设置每个元素的背景颜色
-      objs[i].style.backgroundColor = "red";
-    }
-  };
+    my$("btn").onclick = function () {
+        //根据类样式的名字来获取元素
+        var objs = document.getElementsByClassName("cls");
+        for (var i = 0; i < objs.length; i++) {
+            //设置每个元素的背景颜色
+            objs[i].style.backgroundColor = "red";
+        }
+    };
 </script>
 </body>
 </html>
