@@ -349,7 +349,7 @@ getChildren(doc);
 </script>
 ```
 
-6.点击按钮显示哈哈(排他功能)
+6.点击按钮更改文本内容(排他功能)
 
 ```
 <p>天才</p><p>天才</p><p>天才</p><p>天才</p>
@@ -368,7 +368,20 @@ getChildren(doc);
 7.点击按钮显示和隐藏div
 
 ```
-
+<input type="button" value="显示" id="btn"/>
+<div id="div" style="width: 80px;height: 50px; background: gold">显示</div>
+<script>
+    var divObj = document.getElementById("div");
+    var divText = divObj.innerText;
+    document.getElementById("btn").onclick = function () {
+        if (this.value == "显示") {
+            this.value = "隐藏";
+            divObj.style.display = "none";//隐藏
+        } else {
+            this.value = "显示";
+            divObj.style.display = "block";//隐藏
+        }
+    }
 ```
 
 
