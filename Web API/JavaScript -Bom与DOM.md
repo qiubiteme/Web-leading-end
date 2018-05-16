@@ -272,17 +272,31 @@ getChildren(doc);
 ```
 <input type="button" value="弹出对话框" id="btn"/>
 <script>
-    //最终极的点击按钮弹出对话框的代码
-    document.getElementById("btn").onclick = function () {
+      //先有元素,才能获取,获取之后才能注册事件
+      //根据id属性的值从文档中获取这个元素,
+      var btnObj = document.getElementById("btn");
+      //为当前的这个按钮元素(对象),注册点击事件,添加事件处理函数(匿名函数)
+      btnObj.onclick = function () {
+        //响应做的事情
         alert("弹出弹出对话框")
-    };
+      };
 </script>
 ```
 
 2.点击按钮修改超链接的地址和热点文字
 
 ```
-
+<input type="button" id="btn" value="点击按钮修改超链接的地址和热点文字">
+<a href="https://www.baidu.com/" id="baidu">跳转到百度</a>
+<script>
+	////根据id获取a标签元素对象,
+    var baiduObj = document.getElementById("baidu");
+    document.getElementById("btn").onclick = function () {
+    	//设置href属性
+        baiduObj.href = "https://www.qq.com/";
+        //设置文字内容
+        baiduObj.innerText = "跳转到腾讯"
+    }
 ```
 
 
