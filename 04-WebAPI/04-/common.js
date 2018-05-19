@@ -42,6 +42,7 @@ function getDates(dt) {
     str = year + "年" + month + "月" + day + "日 " + hour + ":" + min + ":" + sec;
     return str;
 }
+
 /**
  * 获取指定标签对象
  * @param id 标签的id属性值
@@ -51,6 +52,11 @@ function my$(id) {
     return document.getElementById(id);
 }
 
+/**
+ * 设置元素的文本内容
+ * @param element 任意元素
+ * @param text 任意元素中的文本内容
+ */
 function setInnerText(element, text) {
     if (typeof element.textContent == "undefined") {
         element.innerText = text;
@@ -58,6 +64,7 @@ function setInnerText(element, text) {
         element.textContent = text;
     }
 }
+
 /**
  * 获取元素的文本内容
  * @param element 任意元素
@@ -70,6 +77,7 @@ function getInnerText(element) {
         return element.textContent;
     }
 }
+
 /**
  * 获取父级元素中的第一个子元素
  * @param element 父级元素
@@ -86,6 +94,7 @@ function getFirstElement(element) {
         return node;
     }
 }
+
 /**
  * 获取父级元素中的最后一个子元素
  * @param element 父级元素
@@ -102,6 +111,7 @@ function getLastElement(element) {
         return node;
     }
 }
+
 /**
  * 获取某个元素的前一个兄弟元素
  * @param element 某个元素
@@ -118,6 +128,7 @@ function getPreviousElement(element) {
         return node;
     }
 }
+
 /**
  * 获取某个元素的后一个兄弟元素
  * @param element 某个元素
@@ -134,13 +145,14 @@ function getNextElement(element) {
         return node;
     }
 }
+
 /**
  * 获取某个元素的所有兄弟元素
  * @param element 某个元素
  * @returns {Array} 兄弟元素
  */
 function getSiblings(element) {
-    if (!element)return;
+    if (!element) return;
     var elements = [];
     var ele = element.previousSibling;
     while (ele) {
@@ -159,46 +171,57 @@ function getSiblings(element) {
     }
     return elements;
 }
+
 /**
  * 返回当前浏览器是什么类型的浏览器
  */
-function userBrowser(){
-    var browserName=navigator.userAgent.toLowerCase();
-    if(/msie/i.test(browserName) && !/opera/.test(browserName)){
+function userBrowser() {
+    var browserName = navigator.userAgent.toLowerCase();
+    if (/msie/i.test(browserName) && !/opera/.test(browserName)) {
         console.log("IE");
-    }else if(/firefox/i.test(browserName)){
+    } else if (/firefox/i.test(browserName)) {
         console.log("Firefox");
-    }else if(/chrome/i.test(browserName) && /webkit/i.test(browserName) && /mozilla/i.test(browserName)){
+    } else if (/chrome/i.test(browserName) && /webkit/i.test(browserName) && /mozilla/i.test(browserName)) {
         console.log("Chrome");
-    }else if(/opera/i.test(browserName)){
+    } else if (/opera/i.test(browserName)) {
         console.log("Opera");
-    }else if(/webkit/i.test(browserName) &&!(/chrome/i.test(browserName) && /webkit/i.test(browserName) && /mozilla/i.test(browserName))){
+    } else if (/webkit/i.test(browserName) && !(/chrome/i.test(browserName) && /webkit/i.test(browserName) && /mozilla/i.test(browserName))) {
         console.log("Safari");
-    }else{
+    } else {
         console.log("不知道什么鬼!");
     }
 }
 
 
-
-//为任意一个元素绑定事件:元素,事件类型,事件处理函数
-function addEventListener(element,type,fn) {
-    if(element.addEventListener){
+/**
+ * 为任意一个元素绑定事件:元素,事件类型,事件处理函数
+ * @param element
+ * @param type
+ * @param fn
+ */
+function addEventListener(element, type, fn) {
+    if (element.addEventListener) {
         //支持
-        element.addEventListener(type,fn,false);
-    }else if(element.attachEvent){
-        element.attachEvent("on"+type,fn);
-    }else{
-        element["on"+type]=fn;
+        element.addEventListener(type, fn, false);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + type, fn);
+    } else {
+        element["on" + type] = fn;
     }
 }
-//为任意的一个元素解绑某个事件:元素,事件类型,事件处理函数
-function removeEventListener(element,type,fn) {
-    if(element.removeEventListener){
-        element.removeEventListener(type,fn,false);
-    }else if(element.detachEvent){
-        element.detachEvent("on"+type,fn);
-    }else{
-        element["on"+type]=null;
+
+/**为任意的一个元素解绑某个事件:元素,事件类型,事件处理函数
+ *
+ * @param element
+ * @param type
+ * @param fn
+ */
+function removeEventListener(element, type, fn) {
+    if (element.removeEventListener) {
+        element.removeEventListener(type, fn, false);
+    } else if (element.detachEvent) {
+        element.detachEvent("on" + type, fn);
+    } else {
+        element["on" + type] = null;
     }
 }

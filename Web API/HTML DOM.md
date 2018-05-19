@@ -194,13 +194,13 @@ getElementById() 方法返回带有指定 ID 的元素：
 
 ## HTML DOM 对象 - 方法和属性
 
-一些常用的 HTML DOM 方法：
+**一些常用的 HTML DOM 方法：**
 
 - getElementById(id) - 获取带有指定 id 的节点（元素）
 - appendChild(node) - 插入新的子节点（元素）
 - removeChild(node) - 删除子节点（元素）
 
-一些常用的 HTML DOM 属性：
+**一些常用的 HTML DOM 属性：**
 
 - innerHTML - 节点（元素）的文本值
 - parentNode - 节点（元素）的父节点
@@ -267,18 +267,11 @@ innerHTML 属性对于获取或替换 HTML 元素的内容很有用。
 **实例**
 
 ```
-<html>
-<body>
-
 <p id="intro">Hello World!</p>
-
 <script>
-var txt=document.getElementById("intro").innerHTML;
-document.write(txt);
+    var txt=document.getElementById("intro").innerHTML;
+    document.write(txt);
 </script>
-
-</body>
-</html>
 ```
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_innerhtml)
@@ -314,18 +307,11 @@ nodeValue 属性规定节点的值。
 **实例**
 
 ```
-<html>
-<body>
-
 <p id="intro">Hello World!</p>
-
 <script type="text/javascript">
-x=document.getElementById("intro");
-document.write(x.firstChild.nodeValue);
+    x=document.getElementById("intro");
+    document.write(x.firstChild.nodeValue);
 </script>
-
-</body>
-</html>
 ```
 
 [亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=dom_firstchild_nodevalue)
@@ -447,7 +433,23 @@ document.getElementsByClassName("intro");
 
 注释：getElementsByClassName() 在 Internet Explorer 5,6,7,8 中无效。
 
+## querySelector() 方法
 
+返回文档中匹配指定 CSS 选择器的一个元素。 
+
+**注意：** querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。
+
+更多 CSS 选择器，请访问我们的 [CSS 选择器教程](http://www.runoob.com/css/css-selectors.html) 和我们的 [CSS 选择器参考手册](http://www.runoob.com/cssref/css-selectors.html)。
+
+------
+
+**浏览器支持**
+
+表格中的数字表示支持该方法的第一个浏览器的版本号。
+
+| 方法            |      |      |      |      |      |
+| --------------- | ---- | ---- | ---- | ---- | ---- |
+| querySelector() | 4.0  | 8.0  | 3.5  | 3.1  | 10.0 |
 
 # DOM - 修改HTML内容
 
@@ -519,8 +521,11 @@ document.getElementsByClassName("intro");
     <p id="p2">This is another paragraph.</p>
 </div>
 <script>
+	//创建元素节点
     var para = document.createElement("p");
+    //创建文本节点
     var node = document.createTextNode("This is new.");
+    //添加节点
     para.appendChild(node);
     var element = document.getElementById("div1");
     element.appendChild(para);
@@ -1060,15 +1065,13 @@ length 属性定义节点列表中节点的数量。
 
 ```
 <html>
-<body>
-
-<p>Hello World!</p>
-<div>
-  <p>DOM 很有用!</p>
-  <p>本例演示节点关系。</p>
-</div>
-
-</body>
+    <body>
+        <p>Hello World!</p>
+        <div>
+          <p>DOM 很有用!</p>
+          <p>本例演示节点关系。</p>
+        </div>
+    </body>
 </html>
 ```
 
@@ -1082,15 +1085,13 @@ firstChild 属性可用于访问元素的文本：
 
 ```
 <html>
-<body>
-<body>
-<p id="intro">Hello World!</p>
-
-<script>
-    x = document.getElementById("intro");
-    document.write(x.firstChild.nodeValue);
-</script>
-</body>
+    <body>
+    <p id="intro">Hello World!</p>
+    <script>
+        x = document.getElementById("intro");
+        document.write(x.firstChild.nodeValue);
+    </script>
+    </body>
 </html>
 ```
 
@@ -1160,6 +1161,327 @@ firstChild 属性可用于访问元素的文本：
 在上面的例子中，getElementById 是一个方法，而 childNodes 和 nodeValue 是属性。
 
 在本教程中，我们将使用 innerHTML 属性。不过，学习上面的方法有助于对 DOM 树结构和导航的理解。
+
+# DOM Style 对象
+
+## Style 对象
+
+Style 对象代表一个单独的样式声明。可从应用样式的文档或元素访问 Style 对象。
+
+### 使用 Style 对象属性的语法：
+
+```
+document.getElementById("id").style.property="值"
+```
+
+## Style 对象的属性：
+
+- [背景](http://www.w3school.com.cn/jsref/dom_obj_style.asp#background)
+- [边框和边距](http://www.w3school.com.cn/jsref/dom_obj_style.asp#border)
+- [布局](http://www.w3school.com.cn/jsref/dom_obj_style.asp#layout)
+- [列表](http://www.w3school.com.cn/jsref/dom_obj_style.asp#list)
+- [杂项](http://www.w3school.com.cn/jsref/dom_obj_style.asp#misc)
+- [定位](http://www.w3school.com.cn/jsref/dom_obj_style.asp#positioning)
+- [打印](http://www.w3school.com.cn/jsref/dom_obj_style.asp#printing)
+- [滚动条](http://www.w3school.com.cn/jsref/dom_obj_style.asp#scrollbar)
+- [表格](http://www.w3school.com.cn/jsref/dom_obj_style.asp#table)
+- [文本](http://www.w3school.com.cn/jsref/dom_obj_style.asp#text)
+- [规范](http://www.w3school.com.cn/jsref/dom_obj_style.asp#std)
+
+### Background 属性
+
+| 属性                                                         | 描述                              |
+| ------------------------------------------------------------ | --------------------------------- |
+| [background](http://www.w3school.com.cn/jsref/prop_style_background.asp) | 在一行中设置所有的背景属性        |
+| [backgroundAttachment](http://www.w3school.com.cn/jsref/prop_style_backgroundattachment.asp) | 设置背景图像是否固定或随页面滚动  |
+| [backgroundColor](http://www.w3school.com.cn/jsref/prop_style_backgroundcolor.asp) | 设置元素的背景颜色                |
+| [backgroundImage](http://www.w3school.com.cn/jsref/prop_style_backgroundimage.asp) | 设置元素的背景图像                |
+| [backgroundPosition](http://www.w3school.com.cn/jsref/prop_style_backgroundposition.asp) | 设置背景图像的起始位置            |
+| [backgroundPositionX](http://www.w3school.com.cn/jsref/prop_style_backgroundpositionx.asp) | 设置backgroundPosition属性的X坐标 |
+| [backgroundPositionY](http://www.w3school.com.cn/jsref/prop_style_backgroundpositiony.asp) | 设置backgroundPosition属性的Y坐标 |
+| [backgroundRepeat](http://www.w3school.com.cn/jsref/prop_style_backgroundrepeat.asp) | 设置是否及如何重复背景图像        |
+
+### Border 和 Margin 属性
+
+| 属性                                                         | 描述                                    |
+| ------------------------------------------------------------ | --------------------------------------- |
+| [border](http://www.w3school.com.cn/jsref/prop_style_border.asp) | 在一行设置四个边框的所有属性            |
+| [borderBottom](http://www.w3school.com.cn/jsref/prop_style_borderbottom.asp) | 在一行设置底边框的所有属性              |
+| [borderBottomColor](http://www.w3school.com.cn/jsref/prop_style_borderbottomcolor.asp) | 设置底边框的颜色                        |
+| [borderBottomStyle](http://www.w3school.com.cn/jsref/prop_style_borderbottomstyle.asp) | 设置底边框的样式                        |
+| [borderBottomWidth](http://www.w3school.com.cn/jsref/prop_style_borderbottomwidth.asp) | 设置底边框的宽度                        |
+| [borderColor](http://www.w3school.com.cn/jsref/prop_style_bordercolor.asp) | 设置所有四个边框的颜色 (可设置四种颜色) |
+| [borderLeft](http://www.w3school.com.cn/jsref/prop_style_borderleft.asp) | 在一行设置左边框的所有属性              |
+| [borderLeftColor](http://www.w3school.com.cn/jsref/prop_style_borderleftcolor.asp) | 设置左边框的颜色                        |
+| [borderLeftStyle](http://www.w3school.com.cn/jsref/prop_style_borderleftstyle.asp) | 设置左边框的样式                        |
+| [borderLeftWidth](http://www.w3school.com.cn/jsref/prop_style_borderleftwidth.asp) | 设置左边框的宽度                        |
+| [borderRight](http://www.w3school.com.cn/jsref/prop_style_borderright.asp) | 在一行设置右边框的所有属性              |
+| [borderRightColor](http://www.w3school.com.cn/jsref/prop_style_borderrightcolor.asp) | 设置右边框的颜色                        |
+| [borderRightStyle](http://www.w3school.com.cn/jsref/prop_style_borderrightstyle.asp) | 设置右边框的样式                        |
+| [borderRightWidth](http://www.w3school.com.cn/jsref/prop_style_borderrightwidth.asp) | 设置右边框的宽度                        |
+| [borderStyle](http://www.w3school.com.cn/jsref/prop_style_borderstyle.asp) | 设置所有四个边框的样式 (可设置四种样式) |
+| [borderTop](http://www.w3school.com.cn/jsref/prop_style_bordertop.asp) | 在一行设置顶边框的所有属性              |
+| [borderTopColor](http://www.w3school.com.cn/jsref/prop_style_bordertopcolor.asp) | 设置顶边框的颜色                        |
+| [borderTopStyle](http://www.w3school.com.cn/jsref/prop_style_bordertopstyle.asp) | 设置顶边框的样式                        |
+| [borderTopWidth](http://www.w3school.com.cn/jsref/prop_style_bordertopwidth.asp) | 设置顶边框的宽度                        |
+| [borderWidth](http://www.w3school.com.cn/jsref/prop_style_borderwidth.asp) | 设置所有四条边框的宽度 (可设置四种宽度) |
+| [margin](http://www.w3school.com.cn/jsref/prop_style_margin.asp) | 设置元素的边距 (可设置四个值)           |
+| [marginBottom](http://www.w3school.com.cn/jsref/prop_style_marginbottom.asp) | 设置元素的底边距                        |
+| [marginLeft](http://www.w3school.com.cn/jsref/prop_style_marginleft.asp) | 设置元素的左边距                        |
+| [marginRight](http://www.w3school.com.cn/jsref/prop_style_marginright.asp) | 设置元素的右边据                        |
+| [marginTop](http://www.w3school.com.cn/jsref/prop_style_margintop.asp) | 设置元素的顶边距                        |
+| [outline](http://www.w3school.com.cn/jsref/prop_style_outline.asp) | 在一行设置所有的outline属性             |
+| [outlineColor](http://www.w3school.com.cn/jsref/prop_style_outlinecolor.asp) | 设置围绕元素的轮廓颜色                  |
+| [outlineStyle](http://www.w3school.com.cn/jsref/prop_style_outlinestyle.asp) | 设置围绕元素的轮廓样式                  |
+| [outlineWidth](http://www.w3school.com.cn/jsref/prop_style_outlinewidth.asp) | 设置围绕元素的轮廓宽度                  |
+| [padding](http://www.w3school.com.cn/jsref/prop_style_padding.asp) | 设置元素的填充 (可设置四个值)           |
+| [paddingBottom](http://www.w3school.com.cn/jsref/prop_style_paddingbottom.asp) | 设置元素的下填充                        |
+| [paddingLeft](http://www.w3school.com.cn/jsref/prop_style_paddingleft.asp) | 设置元素的左填充                        |
+| [paddingRight](http://www.w3school.com.cn/jsref/prop_style_paddingright.asp) | 设置元素的右填充                        |
+| [paddingTop](http://www.w3school.com.cn/jsref/prop_style_paddingtop.asp) | 设置元素的顶填充                        |
+
+### Layout 属性
+
+| 属性                                                         | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [clear](http://www.w3school.com.cn/jsref/prop_style_clear.asp) | 设置在元素的哪边不允许其他的浮动元素                         |
+| [clip](http://www.w3school.com.cn/jsref/prop_style_clip.asp) | 设置元素的形状                                               |
+| [content](http://www.w3school.com.cn/jsref/prop_style_content.asp) | 设置元信息                                                   |
+| counterIncrement                                             | 设置其后是正数的计数器名称的列表。其中整数指示每当元素出现时计数器的增量。默认是1。 |
+| counterReset                                                 | 设置其后是正数的计数器名称的列表。其中整数指示每当元素出现时计数器被设置的值。默认是0。 |
+| [cssFloat](http://www.w3school.com.cn/jsref/prop_style_cssfloat.asp) | 设置图像或文本将出现（浮动）在另一元素中的何处。             |
+| [cursor](http://www.w3school.com.cn/jsref/prop_style_cursor.asp) | 设置显示的指针类型                                           |
+| [direction](http://www.w3school.com.cn/jsref/prop_style_direction.asp) | 设置元素的文本方向                                           |
+| [display](http://www.w3school.com.cn/jsref/prop_style_display.asp) | 设置元素如何被显示                                           |
+| [height](http://www.w3school.com.cn/jsref/prop_style_height.asp) | 设置元素的高度                                               |
+| markerOffset                                                 | 设置marker box的principal box距离其最近的边框边缘的距离      |
+| marks                                                        | 设置是否cross marks或crop marks应仅仅被呈现于page box边缘之外 |
+| [maxHeight](http://www.w3school.com.cn/jsref/prop_style_maxheight.asp) | 设置元素的最大高度                                           |
+| [maxWidth](http://www.w3school.com.cn/jsref/prop_style_maxwidth.asp) | 设置元素的最大宽度                                           |
+| [minHeight](http://www.w3school.com.cn/jsref/prop_style_minheight.asp) | 设置元素的最小高度                                           |
+| [minWidth](http://www.w3school.com.cn/jsref/prop_style_minwidth.asp) | 设置元素的最小宽度                                           |
+| [overflow](http://www.w3school.com.cn/jsref/prop_style_overflow.asp) | 规定如何处理不适合元素盒的内容                               |
+| [verticalAlign](http://www.w3school.com.cn/jsref/prop_style_verticalalign.asp) | 设置对元素中的内容进行垂直排列                               |
+| [visibility](http://www.w3school.com.cn/jsref/prop_style_visibility.asp) | 设置元素是否可见                                             |
+| [width](http://www.w3school.com.cn/jsref/prop_style_width.asp) | 设置元素的宽度                                               |
+
+### List 属性
+
+| 属性                                                         | 描述                     |
+| ------------------------------------------------------------ | ------------------------ |
+| [listStyle](http://www.w3school.com.cn/jsref/prop_style_liststyle.asp) | 在一行设置列表的所有属性 |
+| [listStyleImage](http://www.w3school.com.cn/jsref/prop_style_liststyleimage.asp) | 把图像设置为列表项标记   |
+| [listStylePosition](http://www.w3school.com.cn/jsref/prop_style_liststyleposition.asp) | 改变列表项标记的位置     |
+| [listStyleType](http://www.w3school.com.cn/jsref/prop_style_liststyletype.asp) | 设置列表项标记的类型     |
+
+### Positioning 属性
+
+| 属性                                                         | 描述                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------ |
+| [bottom](http://www.w3school.com.cn/jsref/prop_style_bottom.asp) | 设置元素的底边缘距离父元素底边缘的之上或之下的距离     |
+| [left](http://www.w3school.com.cn/jsref/prop_style_left.asp) | 置元素的左边缘距离父元素左边缘的左边或右边的距离       |
+| [position](http://www.w3school.com.cn/jsref/prop_style_position.asp) | 把元素放置在static, relative, absolute 或 fixed 的位置 |
+| [right](http://www.w3school.com.cn/jsref/prop_style_right.asp) | 置元素的右边缘距离父元素右边缘的左边或右边的距离       |
+| [top](http://www.w3school.com.cn/jsref/prop_style_top.asp)   | 设置元素的顶边缘距离父元素顶边缘的之上或之下的距离     |
+| [zIndex](http://www.w3school.com.cn/jsref/prop_style_zindex.asp) | 设置元素的堆叠次序                                     |
+
+### Printing 属性
+
+| 属性                                                         | 描述                               |
+| ------------------------------------------------------------ | ---------------------------------- |
+| orphans                                                      | 设置段落留到页面底部的最小行数     |
+| page                                                         | 设置显示某元素时使用的页面类型     |
+| [pageBreakAfter](http://www.w3school.com.cn/jsref/prop_style_pagebreakafter.asp) | 设置某元素之后的分页行为           |
+| [pageBreakBefore](http://www.w3school.com.cn/jsref/prop_style_pagebreakbefore.asp) | 设置某元素之前的分页行为           |
+| [pageBreakInside](http://www.w3school.com.cn/jsref/prop_style_pagebreakinside.asp) | 设置某元素内部的分页行为           |
+| size                                                         | 设置页面的方向和尺寸               |
+| widows                                                       | 设置段落必须留到页面顶部的最小行数 |
+
+### Scrollbar 属性 (IE-only)
+
+| 属性                                                         | 描述                                               |
+| ------------------------------------------------------------ | -------------------------------------------------- |
+| [scrollbar3dLightColor](http://www.w3school.com.cn/jsref/prop_style_scrollbar3dlightcolor.asp) | 设置箭头和滚动条左侧和顶边的颜色                   |
+| [scrollbarArrowColor](http://www.w3school.com.cn/jsref/prop_style_scrollbararrowcolor.asp) | 设置滚动条上的箭头颜色                             |
+| [scrollbarBaseColor](http://www.w3school.com.cn/jsref/prop_style_scrollbarbasecolor.asp) | 设置滚动条的底色                                   |
+| [scrollbarDarkShadowColor](http://www.w3school.com.cn/jsref/prop_style_scrollbardarkshadowcolor.asp) | 设置箭头和滚动条右侧和底边的颜色                   |
+| [scrollbarFaceColor](http://www.w3school.com.cn/jsref/prop_style_scrollbarfacecolor.asp) | 设置滚动条的表色                                   |
+| [scrollbarHighlightColor](http://www.w3school.com.cn/jsref/prop_style_scrollbarhighlightcolor.asp) | 设置箭头和滚动条左侧和顶边的颜色，以及滚动条的背景 |
+| [scrollbarShadowColor](http://www.w3school.com.cn/jsref/prop_style_scrollbarshadowcolor.asp) | 设置箭头和滚动条右侧和底边的颜色                   |
+| [scrollbarTrackColor](http://www.w3school.com.cn/jsref/prop_style_scrollbartrackcolor.asp) | 设置滚动条的背景色                                 |
+
+### Table 属性
+
+| 属性                                                         | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [borderCollapse](http://www.w3school.com.cn/jsref/prop_style_bordercollapse.asp) | 设置表格边框是否合并为单边框，或者像在标准的HTML中那样分离。 |
+| [borderSpacing](http://www.w3school.com.cn/jsref/prop_style_borderspacing.asp) | 设置分隔单元格边框的距离                                     |
+| [captionSide](http://www.w3school.com.cn/jsref/prop_style_captionside.asp) | 设置表格标题的位置                                           |
+| [emptyCells](http://www.w3school.com.cn/jsref/prop_style_emptycells.asp) | 设置是否显示表格中的空单元格                                 |
+| [tableLayout](http://www.w3school.com.cn/jsref/prop_style_tablelayout.asp) | 设置用来显示表格单元格、行以及列的算法                       |
+
+### Text 属性
+
+| 属性                                                         | 描述                             |
+| ------------------------------------------------------------ | -------------------------------- |
+| [color](http://www.w3school.com.cn/jsref/prop_style_color.asp) | 设置文本的颜色                   |
+| [font](http://www.w3school.com.cn/jsref/prop_style_font.asp) | 在一行设置所有的字体属性         |
+| [fontFamily](http://www.w3school.com.cn/jsref/prop_style_fontfamily.asp) | 设置元素的字体系列。             |
+| [fontSize](http://www.w3school.com.cn/jsref/prop_style_fontsize.asp) | 设置元素的字体大小。             |
+| [fontSizeAdjust](http://www.w3school.com.cn/jsref/prop_style_fontsizeadjust.asp) | 设置/调整文本的尺寸              |
+| [fontStretch](http://www.w3school.com.cn/jsref/prop_style_fontstretch.asp) | 设置如何紧缩或伸展字体           |
+| [fontStyle](http://www.w3school.com.cn/jsref/prop_style_fontstyle.asp) | 设置元素的字体样式               |
+| [fontVariant](http://www.w3school.com.cn/jsref/prop_style_fontvariant.asp) | 用小型大写字母字体来显示文本     |
+| [fontWeight](http://www.w3school.com.cn/jsref/prop_style_fontweight.asp) | 设置字体的粗细                   |
+| [letterSpacing](http://www.w3school.com.cn/jsref/prop_style_letterspacing.asp) | 设置字符间距                     |
+| [lineHeight](http://www.w3school.com.cn/jsref/prop_style_lineheight.asp) | 设置行间距                       |
+| [quotes](http://www.w3school.com.cn/jsref/prop_style_quotes.asp) | 设置在文本中使用哪种引号         |
+| [textAlign](http://www.w3school.com.cn/jsref/prop_style_textalign.asp) | 排列文本                         |
+| [textDecoration](http://www.w3school.com.cn/jsref/prop_style_textdecoration.asp) | 设置文本的修饰                   |
+| [textIndent](http://www.w3school.com.cn/jsref/prop_style_textindent.asp) | 缩紧首行的文本                   |
+| textShadow                                                   | 设置文本的阴影效果               |
+| [textTransform](http://www.w3school.com.cn/jsref/prop_style_texttransform.asp) | 对文本设置大写效果               |
+| unicodeBidi                                                  |                                  |
+| [whiteSpace](http://www.w3school.com.cn/jsref/prop_style_whitespace.asp) | 设置如何设置文本中的折行和空白符 |
+| [wordSpacing](http://www.w3school.com.cn/jsref/prop_style_wordspacing.asp) | 设置文本中的词间距               |
+
+### 标准属性
+
+| 属性                                                     | 描述                         |
+| -------------------------------------------------------- | ---------------------------- |
+| [dir](http://www.w3school.com.cn/jsref/prop_dir.asp)     | 设置或返回文本的方向         |
+| [lang](http://www.w3school.com.cn/jsref/prop_lang.asp)   | 设置或返回元素的语言代码     |
+| [title](http://www.w3school.com.cn/jsref/prop_title.asp) | 设置或返回元素的咨询性的标题 |
+
+### cssText 属性
+
+它是一组样式属性及其值的文本表示。这个文本格式化为一个 CSS 样式表，去掉了包围属性和值的元素选择器的花括号。
+
+将这一属性设置为非法的值将会抛出一个代码为 SYNTAX_ERR 的 [DOMException 异常](http://www.w3school.com.cn/xmldom/dom_domexception.asp)。当 CSS2Properties 对象是只读的时候，试图设置这一属性将会抛出一个代码为 NO_MODIFICATION_ALLOWED_ERR 的 [DOMException 异常](http://www.w3school.com.cn/xmldom/dom_domexception.asp)。
+
+## 关于 CSS2Properties 对象
+
+CSS2Properties 对象表示一组 CSS 样式属性及其值。它为 CSS 规范定义的每一个 CSS 属性都定义一个 JavaScript 属性。
+
+一个 HTMLElement 的 style 属性是一个可读可写的 CSS2Properties 对象，就好像 CSSRule 对象的 style 属性一样。不过，Window.getComputedStyle() 的返回值是一个 CSS2Properties 对象，其属性是只读的。
+
+# DOM Event 对象
+
+## 实例
+
+[哪个鼠标按钮被点击？](http://www.w3school.com.cn/tiy/t.asp?f=hdom_event_button)
+
+ 
+
+[光标的坐标是？](http://www.w3school.com.cn/tiy/t.asp?f=hdom_event_clientx)
+
+ 
+
+[被按的按键的 unicode 是？](http://www.w3school.com.cn/tiy/t.asp?f=hdom_event_keycode)
+
+ 
+
+[相对于屏幕，光标的坐标是？](http://www.w3school.com.cn/tiy/t.asp?f=hdom_event_screenxy)
+
+ 
+
+[shift 键被按了吗？](http://www.w3school.com.cn/tiy/t.asp?f=hdom_event_shiftkey)
+
+ 
+
+[哪个元素被点击了？](http://www.w3school.com.cn/tiy/t.asp?f=hdom_event_srcelement)
+
+ 
+
+[哪个事件类型发生了？](http://www.w3school.com.cn/tiy/t.asp?f=hdom_event_type)
+
+## Event 对象
+
+Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。
+
+事件通常与函数结合使用，函数不会在事件发生前被执行！
+
+## 事件句柄　(Event Handlers)
+
+HTML 4.0 的新特性之一是能够使 HTML 事件触发浏览器中的行为，比如当用户点击某个 HTML 元素时启动一段 JavaScript。下面是一个属性列表，可将之插入 HTML 标签以定义事件的行为。
+
+| 属性                                                         | 此事件发生在何时...                  |
+| ------------------------------------------------------------ | ------------------------------------ |
+| [onabort](http://www.w3school.com.cn/jsref/event_onabort.asp) | 图像的加载被中断。                   |
+| [onblur](http://www.w3school.com.cn/jsref/event_onblur.asp)  | 元素失去焦点。                       |
+| [onchange](http://www.w3school.com.cn/jsref/event_onchange.asp) | 域的内容被改变。                     |
+| [onclick](http://www.w3school.com.cn/jsref/event_onclick.asp) | 当用户点击某个对象时调用的事件句柄。 |
+| [ondblclick](http://www.w3school.com.cn/jsref/event_ondblclick.asp) | 当用户双击某个对象时调用的事件句柄。 |
+| [onerror](http://www.w3school.com.cn/jsref/event_onerror.asp) | 在加载文档或图像时发生错误。         |
+| [onfocus](http://www.w3school.com.cn/jsref/event_onfocus.asp) | 元素获得焦点。                       |
+| [onkeydown](http://www.w3school.com.cn/jsref/event_onkeydown.asp) | 某个键盘按键被按下。                 |
+| [onkeypress](http://www.w3school.com.cn/jsref/event_onkeypress.asp) | 某个键盘按键被按下并松开。           |
+| [onkeyup](http://www.w3school.com.cn/jsref/event_onkeyup.asp) | 某个键盘按键被松开。                 |
+| [onload](http://www.w3school.com.cn/jsref/event_onload.asp)  | 一张页面或一幅图像完成加载。         |
+| [onmousedown](http://www.w3school.com.cn/jsref/event_onmousedown.asp) | 鼠标按钮被按下。                     |
+| [onmousemove](http://www.w3school.com.cn/jsref/event_onmousemove.asp) | 鼠标被移动。                         |
+| [onmouseout](http://www.w3school.com.cn/jsref/event_onmouseout.asp) | 鼠标从某元素移开。                   |
+| [onmouseover](http://www.w3school.com.cn/jsref/event_onmouseover.asp) | 鼠标移到某元素之上。                 |
+| [onmouseup](http://www.w3school.com.cn/jsref/event_onmouseup.asp) | 鼠标按键被松开。                     |
+| [onreset](http://www.w3school.com.cn/jsref/event_onreset.asp) | 重置按钮被点击。                     |
+| [onresize](http://www.w3school.com.cn/jsref/event_onresize.asp) | 窗口或框架被重新调整大小。           |
+| [onselect](http://www.w3school.com.cn/jsref/event_onselect.asp) | 文本被选中。                         |
+| [onsubmit](http://www.w3school.com.cn/jsref/event_onsubmit.asp) | 确认按钮被点击。                     |
+| [onunload](http://www.w3school.com.cn/jsref/event_onunload.asp) | 用户退出页面。                       |
+
+## 鼠标 / 键盘属性
+
+| 属性                                                         | 描述                                         |
+| ------------------------------------------------------------ | -------------------------------------------- |
+| [altKey](http://www.w3school.com.cn/jsref/event_altkey.asp)  | 返回当事件被触发时，"ALT" 是否被按下。       |
+| [button](http://www.w3school.com.cn/jsref/event_button.asp)  | 返回当事件被触发时，哪个鼠标按钮被点击。     |
+| [clientX](http://www.w3school.com.cn/jsref/event_clientx.asp) | 返回当事件被触发时，鼠标指针的水平坐标。     |
+| [clientY](http://www.w3school.com.cn/jsref/event_clienty.asp) | 返回当事件被触发时，鼠标指针的垂直坐标。     |
+| [ctrlKey](http://www.w3school.com.cn/jsref/event_ctrlkey.asp) | 返回当事件被触发时，"CTRL" 键是否被按下。    |
+| [metaKey](http://www.w3school.com.cn/jsref/event_metakey.asp) | 返回当事件被触发时，"meta" 键是否被按下。    |
+| [relatedTarget](http://www.w3school.com.cn/jsref/event_relatedtarget.asp) | 返回与事件的目标节点相关的节点。             |
+| [screenX](http://www.w3school.com.cn/jsref/event_screenx.asp) | 返回当某个事件被触发时，鼠标指针的水平坐标。 |
+| [screenY](http://www.w3school.com.cn/jsref/event_screeny.asp) | 返回当某个事件被触发时，鼠标指针的垂直坐标。 |
+| [shiftKey](http://www.w3school.com.cn/jsref/event_shiftkey.asp) | 返回当事件被触发时，"SHIFT" 键是否被按下。   |
+
+## IE 属性
+
+除了上面的鼠标/事件属性，IE 浏览器还支持下面的属性：
+
+| 属性            | 描述                                                         |
+| --------------- | ------------------------------------------------------------ |
+| cancelBubble    | 如果事件句柄想阻止事件传播到包容对象，必须把该属性设为 true。 |
+| fromElement     | 对于 mouseover 和 mouseout 事件，fromElement 引用移出鼠标的元素。 |
+| keyCode         | 对于 keypress 事件，该属性声明了被敲击的键生成的 Unicode 字符码。对于 keydown 和 keyup 事件，它指定了被敲击的键的虚拟键盘码。虚拟键盘码可能和使用的键盘的布局相关。 |
+| offsetX,offsetY | 发生事件的地点在事件源元素的坐标系统中的 x 坐标和 y 坐标。   |
+| returnValue     | 如果设置了该属性，它的值比事件句柄的返回值优先级高。把这个属性设置为 fasle，可以取消发生事件的源元素的默认动作。 |
+| srcElement      | 对于生成事件的 Window 对象、Document 对象或 Element 对象的引用。 |
+| toElement       | 对于 mouseover 和 mouseout 事件，该属性引用移入鼠标的元素。  |
+| x,y             | 事件发生的位置的 x 坐标和 y 坐标，它们相对于用CSS动态定位的最内层包容元素。 |
+
+## 标准 Event 属性
+
+下面列出了 2 级 DOM 事件标准定义的属性。
+
+| 属性                                                         | 描述                                           |
+| ------------------------------------------------------------ | ---------------------------------------------- |
+| [bubbles](http://www.w3school.com.cn/jsref/event_bubbles.asp) | 返回布尔值，指示事件是否是起泡事件类型。       |
+| [cancelable](http://www.w3school.com.cn/jsref/event_cancelable.asp) | 返回布尔值，指示事件是否可拥可取消的默认动作。 |
+| [currentTarget](http://www.w3school.com.cn/jsref/event_currenttarget.asp) | 返回其事件监听器触发该事件的元素。             |
+| [eventPhase](http://www.w3school.com.cn/jsref/event_eventphase.asp) | 返回事件传播的当前阶段。                       |
+| [target](http://www.w3school.com.cn/jsref/event_target.asp)  | 返回触发此事件的元素（事件的目标节点）。       |
+| [timeStamp](http://www.w3school.com.cn/jsref/event_timestamp.asp) | 返回事件生成的日期和时间。                     |
+| [type](http://www.w3school.com.cn/jsref/event_type.asp)      | 返回当前 Event 对象表示的事件的名称。          |
+
+## 标准 Event 方法
+
+下面列出了 2 级 DOM 事件标准定义的方法。IE 的事件模型不支持这些方法：
+
+| 方法                                                         | 描述                                     |
+| ------------------------------------------------------------ | ---------------------------------------- |
+| [initEvent()](http://www.w3school.com.cn/jsref/event_initevent.asp) | 初始化新创建的 Event 对象的属性。        |
+| [preventDefault()](http://www.w3school.com.cn/jsref/event_preventdefault.asp) | 通知浏览器不要执行与事件关联的默认动作。 |
+| [stopPropagation()](http://www.w3school.com.cn/jsref/event_stoppropagation.asp) | 不再派发事件。                           |
 
 # HTML DOM 总结
 

@@ -37,6 +37,21 @@
 
 </head>
 <body>
+
+<a href="#" id="a-img">鼠标经过显示二维码
+    <img id="img" src="images/456.png" alt="" style="display: none"/>
+</a>
+<script>
+    var aImgObg = document.getElementById("a-img");
+    var imgObg = document.getElementById("img");
+    aImgObg.onmouseover = function () {
+        imgObg.style.display = "block";
+    }
+    aImgObg.onmouseout = function () {
+        imgObg.style.display = "none";
+    };
+</script>
+
 <div class="nodeSmall" id="node_small">
     <a href="#"></a><!--锚定-->
     <div class="erweima hide" id="er">

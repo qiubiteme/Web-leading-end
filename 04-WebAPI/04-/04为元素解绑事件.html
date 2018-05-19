@@ -41,10 +41,10 @@
   function f2() {
     console.log("第二个");
   }
-  my$("btn").attachEvent("onclick",f1);
-  my$("btn").attachEvent("onclick",f2);
+  document.getElementById("btn").attachEvent("onclick",f1);
+  document.getElementById("btn").attachEvent("onclick",f2);
 
-  my$("btn2").onclick=function () {
+  document.getElementById("btn2").onclick=function () {
       my$("btn").detachEvent("onclick",f1);
   };
 

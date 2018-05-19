@@ -59,13 +59,49 @@ window是浏览器的顶级对象，当调用window下的属性和方法时，�
 
 ### 对话框
 
-- alert()
-- prompt()
-- confirm()
+**警告框**
+
+警告框经常用于确保用户可以得到某些信息。
+
+当警告框出现后，用户需要点击确定按钮才能继续进行操作。
+
+**语法：**
+
+```
+alert("文本")
+```
+
+**确认框**
+
+确认框用于使用户可以验证或者接受某些信息。
+
+当确认框出现后，用户需要点击确定或者取消按钮才能继续进行操作。
+
+如果用户点击确认，那么返回值为 true。如果用户点击取消，那么返回值为 false。
+
+**语法：**
+
+```
+confirm("文本")
+```
+
+**提示框**
+
+提示框经常用于提示用户在进入页面前输入某个值。
+
+当提示框出现后，用户需要输入某个值，然后点击确认或取消按钮才能继续操纵。
+
+如果用户点击确认，那么返回值为输入的值。如果用户点击取消，那么返回值为 null。
+
+**语法：**
+
+```
+prompt("文本","默认值")
+```
 
 ### 页面加载事件
 
-- onload
+- **onload** **当页面加载完毕执行**
 
 ```javascript
 window.onload = function () {
@@ -74,7 +110,7 @@ window.onload = function () {
 }
 ```
 
-- onunload
+- **onunload** **当用户退出页面执行**
 
 ```javascript
 window.onunload = function () {
@@ -89,6 +125,8 @@ window.onunload = function () {
 在指定的毫秒数到达之后执行指定的函数，只执行一次
 
 ```javascript
+<input type="button" value="停止" id="btn"/>
+    <script?
 // 创建一个定时器，1000毫秒后执行，返回定时器的标示
 var timerId = setTimeout(function () {
   console.log('Hello World');
@@ -96,6 +134,7 @@ var timerId = setTimeout(function () {
 
 // 取消定时器的执行
 clearTimeout(timerId);
+</script>
 ```
 
 #### setInterval()和clearInterval()
@@ -115,11 +154,11 @@ clearInterval(timerId);
 
 ### location对象
 
-location对象是window对象下的一个属性，时候的时候可以省略window对象
+location对象是window对象下的一个属性，写的时候可以省略window对象
 
 location可以获取或者设置浏览器地址栏的URL
 
-#### URL
+**URL**
 
 统一资源定位符 (Uniform Resource Locator, URL)
 
@@ -141,18 +180,36 @@ fragment:信息片断
 	字符串，锚点.
 ```
 
-#### location有哪些成员？
+**location有哪些成员？**
 
-- 使用chrome的控制台查看
+Location 对象包含有关当前 URL 的信息。
 
-- 查MDN
+Location 对象是 Window 对象的一个部分，可通过 window.location 属性来访问。
 
-  [MDN](https://developer.mozilla.org/zh-CN/)
+**例子**
 
-- 成员
+[把用户带到一个新的地址](http://www.w3school.com.cn/tiy/t.asp?f=hdom_location)
 
-  - assign()/reload()/replace()
-  - hash/host/hostname/search/href……
+**Location 对象属性**
+
+| 属性                                                         | 描述                                          |
+| ------------------------------------------------------------ | --------------------------------------------- |
+| [hash](http://www.w3school.com.cn/jsref/prop_loc_hash.asp)   | 设置或返回从井号 (#) 开始的 URL（锚）。       |
+| [host](http://www.w3school.com.cn/jsref/prop_loc_host.asp)   | 设置或返回主机名和当前 URL 的端口号。         |
+| [hostname](http://www.w3school.com.cn/jsref/prop_loc_hostname.asp) | 设置或返回当前 URL 的主机名。                 |
+| [href](http://www.w3school.com.cn/jsref/prop_loc_href.asp)   | 设置或返回完整的 URL。                        |
+| [pathname](http://www.w3school.com.cn/jsref/prop_loc_pathname.asp) | 设置或返回当前 URL 的路径部分。               |
+| [port](http://www.w3school.com.cn/jsref/prop_loc_port.asp)   | 设置或返回当前 URL 的端口号。                 |
+| [protocol](http://www.w3school.com.cn/jsref/prop_loc_protocol.asp) | 设置或返回当前 URL 的协议。                   |
+| [search](http://www.w3school.com.cn/jsref/prop_loc_search.asp) | 设置或返回从问号 (?) 开始的 URL（查询部分）。 |
+
+**Location 对象方法**
+
+| 属性                                                         | 描述                     |
+| ------------------------------------------------------------ | ------------------------ |
+| [assign()](http://www.w3school.com.cn/jsref/met_loc_assign.asp) | 加载新的文档。           |
+| [reload()](http://www.w3school.com.cn/jsref/met_loc_reload.asp) | 重新加载当前文档。       |
+| [replace()](http://www.w3school.com.cn/jsref/met_loc_replace.asp) | 用新的文档替换当前文档。 |
 
 #### 案例
 
@@ -178,23 +235,101 @@ console.log(getQuery(location.search));
 console.log(getQuery(location.href));
 ```
 
-### history对象
+### 
 
-- back()
-- forward()
-- go()
+### History 对象
 
-### navigator对象
+History 对象包含用户（在浏览器窗口中）访问过的 URL。
 
-- userAgent
+History 对象是 window 对象的一部分，可通过 window.history 属性对其进行访问。
 
-通过userAgent可以判断用户浏览器的类型
+注释：没有应用于 History 对象的公开标准，不过所有浏览器都支持该对象。
 
-- platform
+**History 对象属性**
 
-通过platform可以判断浏览器所在的系统平台类型.
+| 属性                                                         | 描述                              |
+| ------------------------------------------------------------ | --------------------------------- |
+| [length](http://www.w3school.com.cn/jsref/prop_his_length.asp) | 返回浏览器历史列表中的 URL 数量。 |
 
-## DOM
+**History 对象方法**
+
+| 方法                                                         | 描述                                |
+| ------------------------------------------------------------ | ----------------------------------- |
+| [back()](http://www.w3school.com.cn/jsref/met_his_back.asp)  | 加载 history 列表中的前一个 URL。   |
+| [forward()](http://www.w3school.com.cn/jsref/met_his_forward.asp) | 加载 history 列表中的下一个 URL。   |
+| [go()](http://www.w3school.com.cn/jsref/met_his_go.asp)      | 加载 history 列表中的某个具体页面。 |
+
+
+
+**History 对象描述**
+
+History 对象最初设计来表示窗口的浏览历史。但出于隐私方面的原因，History 对象不再允许脚本访问已经访问过的实际 URL。唯一保持使用的功能只有 [back()](http://www.w3school.com.cn/jsref/met_his_back.asp)、[forward()](http://www.w3school.com.cn/jsref/met_his_forward.asp) 和 [go()](http://www.w3school.com.cn/jsref/met_his_go.asp) 方法。
+
+**例子**
+
+下面一行代码执行的操作与单击后退按钮执行的操作一样：
+
+```
+history.back()
+```
+
+下面一行代码执行的操作与单击两次后退按钮执行的操作一样：
+
+```
+history.go(-2)
+```
+
+ 
+
+## Navigator 对象
+
+Navigator 对象包含有关浏览器的信息。
+
+注释：没有应用于 navigator 对象的公开标准，不过所有浏览器都支持该对象。
+
+**Navigator 对象集合**
+
+| 集合      | 描述                                                         |
+| --------- | ------------------------------------------------------------ |
+| plugins[] | 返回对文档中所有嵌入式对象的引用。该集合是一个 Plugin 对象的数组，其中的元素代表浏览器已经安装的插件。Plug-in 对象提供的是有关插件的信息，其中包括它所支持的 MIME 类型的列表。虽然 plugins[] 数组是由 IE 4 定义的，但是在 IE 4 中它却总是空的，因为 IE 4 不支持插件和 Plugin 对象。 |
+
+
+
+**Navigator 对象属性**
+
+| 属性                                                         | 描述                                           |
+| ------------------------------------------------------------ | ---------------------------------------------- |
+| [appCodeName](http://www.w3school.com.cn/jsref/prop_nav_appcodename.asp) | 返回浏览器的代码名。                           |
+| [appMinorVersion](http://www.w3school.com.cn/jsref/prop_nav_appminorversion.asp) | 返回浏览器的次级版本。                         |
+| [appName](http://www.w3school.com.cn/jsref/prop_nav_appname.asp) | 返回浏览器的名称。                             |
+| [appVersion](http://www.w3school.com.cn/jsref/prop_nav_appversion.asp) | 返回浏览器的平台和版本信息。                   |
+| [browserLanguage](http://www.w3school.com.cn/jsref/prop_nav_browserlanguage.asp) | 返回当前浏览器的语言。                         |
+| [cookieEnabled](http://www.w3school.com.cn/jsref/prop_nav_cookieenabled.asp) | 返回指明浏览器中是否启用 cookie 的布尔值。     |
+| [cpuClass](http://www.w3school.com.cn/jsref/prop_nav_cpuclass.asp) | 返回浏览器系统的 CPU 等级。                    |
+| [onLine](http://www.w3school.com.cn/jsref/prop_nav_online.asp) | 返回指明系统是否处于脱机模式的布尔值。         |
+| [platform](http://www.w3school.com.cn/jsref/prop_nav_platform.asp) | 返回运行浏览器的操作系统平台。                 |
+| [systemLanguage](http://www.w3school.com.cn/jsref/prop_nav_systemlanguage.asp) | 返回 OS 使用的默认语言。                       |
+| [userAgent](http://www.w3school.com.cn/jsref/prop_nav_useragent.asp) | 返回由客户机发送服务器的 user-agent 头部的值。 |
+| [userLanguage](http://www.w3school.com.cn/jsref/prop_nav_userlanguage.asp) | 返回 OS 的自然语言设置。                       |
+
+
+
+**Navigator 对象方法**
+
+| 方法                                                         | 描述                                         |
+| ------------------------------------------------------------ | -------------------------------------------- |
+| [javaEnabled()](http://www.w3school.com.cn/jsref/met_nav_javaenabled.asp) | 规定浏览器是否启用 Java。                    |
+| [taintEnabled()](http://www.w3school.com.cn/jsref/met_nav_taintenabled.asp) | 规定浏览器是否启用数据污点 (data tainting)。 |
+
+
+
+**Navigator 对象描述**
+
+Navigator 对象包含的属性描述了正在使用的浏览器。可以使用这些属性进行平台专用的配置。
+
+虽然这个对象的名称显而易见的是 Netscape 的 Navigator 浏览器，但其他实现了 JavaScript 的浏览器也支持这个对象。
+
+Navigator 对象的实例是唯一的，可以用 Window 对象的 navigator 属性来引用它。
 
 ### DOM的概念
 
@@ -385,7 +520,12 @@ getChildren(doc);
 ```
 
 
+
 8.显示和隐藏二维码
+
+```
+
+```
 
 9.点击按钮修改所有p标签内容
 10.点击按钮修改所有文本框内容
@@ -393,7 +533,54 @@ getChildren(doc);
 12.点击超链接停止跳转页面
 13.点击小图显示大图
 14.美女相册
-15点击按钮选中性别和兴趣
+15.点击按钮选中性别和兴趣
+16.点击按钮禁用文本框
+
+```
+<input type="button" value="禁用文本框" id="btn"/>
+<input type="text" value="文本框" id="txt"/>
+<script>
+    //先根据id获取按钮,为按钮注册点击事件,添加事件处理函数
+    document.getElementById("btn").onclick = function () {
+        //根据id获取文本框,设置disabled属性
+        document.getElementById("txt").disabled = true;
+    };
+</script>
+```
+17.阻止超链接跳转
+
+```
+<a href="http://www.baidu.com" id="baidu">指向百度</a>
+<script>
+    document.getElementById("baidu").onclick = function () {
+        // alert("阻止跳转")
+        //阻止超链接的默认的跳转:return false,消耗掉事件
+        return false;
+    }
+</script>
+```
+
+18.鼠标经过显示图片事件
+
+```
+<a href="#" id="a-img">鼠标经过显示二维码
+    <img id="img" src="images/456.png" alt="" style="display: none"/>
+</a>
+<script>
+    var aImgObg = document.getElementById("a-img");
+    var imgObg = document.getElementById("img");
+    aImgObg.onmouseover = function () {
+        imgObg.style.display = "block";
+    }
+    aImgObg.onmouseout = function () {
+        imgObg.style.display = "none";
+    };
+</script>
+```
+
+
+
+
 
 ### 为什么要获取页面元素
 
@@ -457,14 +644,23 @@ for (var i = 0; i < boxes.length; i++) {
 - 总结
 
 ```
-掌握
-	getElementById()
-	getElementsByTagName()
-了解
-	getElementsByName()
-	getElementsByClassName()
-	querySelector()
-	querySelectorAll()
+  * 根据id属性的值获取元素,返回来的是一个元素对象
+  * document.getElementById("id属性的值");
+  *
+  * 根据标签名字获取元素,返回来的是一个伪数组,里面保存了多个的DOM对象
+  * document.getElementsByTagName("标签名字");
+  *
+  * 下面的几个,有的浏览器不支持
+  *
+  * 根据name属性的值获取元素,返回来的是一个伪数组,里面保存了多个的DOM对象
+  * document.getElementsByName("name属性的值")
+  * 根据类样式的名字来获取元素,返回来的是一个伪数组,里面保存了多个的DOM对象
+  * document.getElementsByClassName("类样式的名字")
+  * 根据选择器获取元素,返回来的是一个元素对象
+  * document.querySelector("选择器的名字");
+  *
+  * 根据选择器获取元素,返回来的是一个伪数组,里面保存了多个的DOM对象
+  * document.querySelectorAll("选择器的名字")
 ```
 
 ## 事件
@@ -695,51 +891,133 @@ console.log(box.lastChild);
 
 
 
-### 注册/移除事件的三种方式
+### 元素绑定事件
 
 ```javascript
-var box = document.getElementById('box');
-box.onclick = function () {
-  console.log('点击后执行');
-};
-box.onclick = null;
+    * 总结绑定事件的区别:
+    * addEventListener();
+    * attachEvent()
+    * 相同点: 都可以为元素绑定事件
+    * 不同点:
+    * 1.方法名不一样
+    * 2.参数个数不一样addEventListener三个参数,attachEvent两个参数
+    * 3.addEventListener 谷歌,火狐,IE11支持,IE8不支持
+    *   attachEvent 谷歌火狐不支持,IE11不支持,IE8支持
+    * 4.this不同,addEventListener 中的this是当前绑定事件的对象
+    *   attachEvent中的this是window
+    * 5.addEventListener中事件的类型(事件的名字)没有on
+    *  attachEvent中的事件的类型(事件的名字)有on
+    *
+    *  现在遇到的逆境,都是以后成长的阶梯
 
-box.addEventListener('click', eventCode, false);
-box.removeEventListener('click', eventCode, false);
 
-box.attachEvent('onclick', eventCode);
-box.detachEvent('onclick', eventCode);
-
-function eventCode() {
-  console.log('点击后执行');
-}
+<input type="button" value="按钮" id="btn"/>
+<script>
+    //谷歌火狐支持,IE不支持
+document.getElementById("btn").addEventListener("click", function (){
+        console.log("addEventListener")
+    }, false);
+	//谷歌火狐不支持,IE支持
+document.getElementById("btn").attachEvent("onclick", function () {
+        console.log("attachEvent")
+    });
+</script>
 ```
 
-### 兼容代码
+**兼容代码**
 
 ```javascript
+/**
+ * 为任意一个元素绑定事件:元素,事件类型,事件处理函数
+ * @param element
+ * @param type
+ * @param fn
+ */
 function addEventListener(element, type, fn) {
-  if (element.addEventListener) {
-    element.addEventListener(type, fn, false);
-  } else if (element.attachEvent){
-    element.attachEvent('on' + type,fn);
-  } else {
-    element['on'+type] = fn;
-  }
-}
-
-function removeEventListener(element, type, fn) {
-  if (element.removeEventListener) {
-    element.removeEventListener(type, fn, false);
-  } else if (element.detachEvent) {
-    element.detachEvent('on' + type, fn);
-  } else {
-    element['on'+type] = null;
-  }
+    if (element.addEventListener) {
+        //支持
+        element.addEventListener(type, fn, false);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + type, fn);
+    } else {
+        element["on" + type] = fn;
+    }
 }
 ```
+
+### 元素解绑事件
+
+**注意:用什么方式绑定事件,就应该用对应的方式解绑事件**
+
+1.解绑事件
+
+对象.on事件名字=事件处理函数--->绑定事件
+
+对象.on事件名字=null;
+
+2.解绑事件
+
+对象.addEventListener("没有on的事件类型",命名函数,false);---绑定事件
+
+对象.removeEventListener("没有on的事件类型",函数名字,false);
+
+3.解绑事件
+
+对象.attachEvent("on事件类型",命名函数);---绑定事件
+
+对象.detachEvent("on事件类型",函数名字);
+
+
+
+**兼容代码**
+
+```
+
+/**为任意的一个元素解绑某个事件:元素,事件类型,事件处理函数
+ *
+ * @param element
+ * @param type
+ * @param fn
+ */
+function removeEventListener(element, type, fn) {
+    if (element.removeEventListener) {
+        element.removeEventListener(type, fn, false);
+    } else if (element.detachEvent) {
+        element.detachEvent("on" + type, fn);
+    } else {
+        element["on" + type] = null;
+    }
+}
+```
+
+
 
 ### 事件的三个阶段
+
+1.事件捕获阶段  :从外向内
+
+2.事件目标阶段  :最开始选择的那个
+
+3.事件冒泡阶段  : 从里向外
+
+* 为元素绑定事件
+* addEventListener("没有on的事件类型",事件处理函数,控制事件阶段的)
+* 事件触发的过程中,可能会出现事件冒泡的效果,为了阻止事件冒泡--->
+* window.event.cancelBubble=true;谷歌,IE8支持,火狐不支持
+* window.event就是一个对象,是IE中的标准
+* e.stopPropagation();阻止事件冒泡---->谷歌和火狐支持
+* window.event和e都是事件参数对象,一个是IE的标准,一个是火狐的标准
+* 事件参数e在IE8的浏览器中是不存在,此时用window.event来代替
+* addEventListener中第三个参数是控制事件阶段的
+* 事件的阶段有三个:
+* 通过e.eventPhase这个属性可以知道当前的事件是什么阶段你的
+* 如果这个属性的值是:
+* 1---->捕获阶段
+* 2---->目标阶段
+* 3---->冒泡
+* 一般默认都是冒泡阶段,很少用捕获阶段
+* 冒泡阶段:从里向外
+* 捕获阶段:从外向内
 
 1. 捕获阶段
 
