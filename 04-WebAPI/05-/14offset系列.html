@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    input{
+      top: 250px;
+      position: absolute;
+    }
+    #dv1{
+      width: 200px;
+      height: 150px;
+      background-color: red;
+      position: absolute;
+      left: 100px;
+      top: 30px;
+    }
+    #dv2{
+      width: 100px;
+      height: 50px;
+      background-color: green;
+    }
+  </style>
+  <script>
+
+    //三个大的系列:
+    /*
+    * 三组属性
+    * 1. offset系列中的属性
+    *
+    *
+    * */
+  </script>
+</head>
+<body>
+<div id="dv1">
+  <div id="dv2"></div>
+</div>
+<input type="button" value="显示效果" id="btn"/>
+<script src="common.js"></script>
+<script>
+
+  //红色div的宽和高
+  my$("btn").onclick=function () {
+    //在style标签中设置的样式属性获取不到
+    //style属性中设置的样式属性是可以获取到的
+    //获取元素的样式,下面的方式废了
+    //console.log(my$("dv1").style.width);
+    //console.log(my$("dv1").style.height);
+
+    //以后获取元素的宽和高,应该使用offset系列来获取
+    /*
+    *
+    * offsetWidth:获取元素的宽
+    * offsetHeight:获取元素的高
+    * offsetLeft:获取元素距离左边位置的值
+    * offsetTop:获取元素距离上面位置的值
+    *
+    * */
+   console.log(my$("dv1").offsetWidth);
+   console.log(my$("dv1").offsetHeight);
+
+
+    console.log(my$("dv1").offsetLeft);
+    console.log(my$("dv1").offsetTop);
+  };
+</script>
+</body>
+</html>

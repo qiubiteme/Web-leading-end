@@ -120,13 +120,13 @@ window.onunload = function () {
 
 ### 定时器
 
-#### setTimeout()和clearTimeout()
+**setTimeout()和clearTimeout() 只执行一次**
 
 在指定的毫秒数到达之后执行指定的函数，只执行一次
 
 ```javascript
 <input type="button" value="停止" id="btn"/>
-    <script?
+<script>
 // 创建一个定时器，1000毫秒后执行，返回定时器的标示
 var timerId = setTimeout(function () {
   console.log('Hello World');
@@ -137,12 +137,14 @@ clearTimeout(timerId);
 </script>
 ```
 
-#### setInterval()和clearInterval()
+**setInterval()和clearInterval()**
 
 定时调用的函数，可以按照给定的时间(单位毫秒)周期调用函数
 
 ```javascript
-// 创建一个定时器，每隔1秒调用一次
+<input type="button" value="停止" id="btn"/>
+<script>
+    // 创建一个定时器，每隔1秒调用一次
 var timerId = setInterval(function () {
   var date = new Date();
   console.log(date.toLocaleTimeString());
@@ -150,6 +152,7 @@ var timerId = setInterval(function () {
 
 // 取消定时器的执行
 clearInterval(timerId);
+</script>
 ```
 
 ### location对象
