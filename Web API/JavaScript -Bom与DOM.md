@@ -1062,7 +1062,18 @@ function removeEventListener(element, type, fn) {
 ### 偏移量
 
 - offsetParent用于获取定位的父级元素
+
 - offsetParent和parentNode的区别
+
+  **offset系列:**
+
+  offsetLeft:距离左边位置的值
+
+  offsetTop:距离上面位置的值
+
+  offsetWidth:元素的宽(有边框)
+
+  offsetHeight:元素的高(有边框)
 
 ```javascript
 var box = document.getElementById('box');
