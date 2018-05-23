@@ -49,20 +49,32 @@
         //    var dog=new Object();
 
 
-        //自定义构造函数
-        function Person(name, age, sex) {
+        // //自定义构造函数
+        // function Person(name, age, sex) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+        //     this.play = function () {
+        //         console.log("天天打游戏");
+        //     };
+        // }
+        //
+        // var per = new Person("雏田", 18, "女");
+        // console.log(per instanceof Person);
+
+
+    </script>
+    <script>
+        function person(name, age, sex) {
             this.name = name;
             this.age = age;
             this.sex = sex;
-            this.play = function () {
-                console.log("天天打游戏");
-            };
         }
 
-        var per = new Person("雏田", 18, "女");
-        console.log(per instanceof Person);
+        var p1 = new person("qiubite", 12, "男");
+        var p1 = new person("bite", 22, "男");
 
-
+        console.log(p1.toString())
     </script>
 </head>
 <body>
