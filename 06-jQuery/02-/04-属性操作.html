@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
 
@@ -12,26 +12,28 @@
 
 <script src="jquery-1.12.4.js"></script>
 <script>
-  $(function () {
-    
-    
-    //用法和css一样
-    //设置单个属性
-    //attr(name, value)
-    //$("img").attr("alt", "图破了");
-    //$("img").attr("title", "错错错错");
-    
-    //设置多个属性
-    /*$("img").attr({
-      alt:"图破了",
-      title:"错错错",
-      aa:"bb"
-    })*/
-  
-  
-    console.log($("img").attr("alt"));
-  
-  });
+    $(function () {
+
+
+        //用法和css一样
+        //设置单个属性
+        //attr(name, value)
+        //$("img").attr("alt", "图破了");
+        //$("img").attr("title", "错错错错");
+
+        //设置多个属性
+        $("img").attr({
+          alt:"图破了",
+          title:"错错错",
+          aa:"bb"
+        });
+        // alert($("img").attr("alt"))
+        alert($("img").attr("title"));
+
+
+        console.log($("img").attr("alt"));
+
+    });
 </script>
 
 </body>

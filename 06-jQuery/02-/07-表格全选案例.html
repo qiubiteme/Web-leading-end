@@ -104,7 +104,7 @@
   $(function () {
     
     $("#j_cbAll").click(function () {
-      //修改下面的哪些checkbox
+      //修改下面的哪些checkbox,获取属性$(this).prop("checked")
       $("#j_tb input").prop("checked", $(this).prop("checked"));
     });
   
