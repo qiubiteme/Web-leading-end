@@ -1,8 +1,6 @@
----
-
----
 
 
+[TOC]
 
 # jQuery基本概念
 
@@ -443,7 +441,7 @@ jQuery 使用名为 noConflict() 的方法来解决该问题。
 
   另一个 hide() 演示。如何隐藏部分文本。
 
-#### jQuery hide() 和 show()
+### jQuery hide() 和 show()
 
 通过 jQuery，您可以使用 hide() 和 show() 方法来隐藏和显示 HTML 元素：
 
@@ -1663,306 +1661,383 @@ $("button").click(function(){
 
 
 
+# jQuery 遍历
 
+### 什么是遍历？
 
+jQuery 遍历，意为“移动”，用于根据其相对于其他元素的关系来“查找”（或选取）HTML 元素。以某项选择开始，并沿着这个选择移动，直到抵达您期望的元素为止。
 
+下图展示了一个家族树。通过 jQuery 遍历，您能够从被选（当前的）元素开始，轻松地在家族树中向上移动（祖先），向下移动（子孙），水平移动（同胞）。这种移动被称为对 DOM 进行遍历。
 
-# jQuery特殊属性操作
+**图示解释：**![](http://www.w3school.com.cn/i/dom_tree.gif)
 
-## val方法
+- <div> 元素是 <ul> 的父元素，同时是其中所有内容的祖先。
+- <ul> 元素是 <li> 元素的父元素，同时是 <div> 的子元素
+- 左边的 <li> 元素是 <span> 的父元素，<ul> 的子元素，同时是 <div> 的后代。
+- <span> 元素是 <li> 的子元素，同时是 <ul> 和 <div> 的后代。
+- 两个 <li> 元素是同胞（拥有相同的父元素）。
+- 右边的 <li> 元素是 <b> 的父元素，<ul> 的子元素，同时是 <div> 的后代。
+- <b> 元素是右边的 <li> 的子元素，同时是 <ul> 和 <div> 的后代。
 
-> val方法用于设置和获取表单元素的值，例如input、textarea的值
+提示：祖先是父、祖父、曾祖父等等。后代是子、孙、曾孙等等。同胞拥有相同的父。
 
-```javascript
-//设置值
-$("#name").val(“张三”);
-//获取值
-$("#name").val();
+### 遍历 _DOM
+
+jQuery 提供了多种遍历 DOM 的方法。
+
+遍历方法中最大的种类是树遍历（tree-traversal）。
+
+下一章会讲解如何在 DOM 树中向上、下以及同级移动。
+
+## 遍历 - 祖先
+
+祖先是父、祖父或曾祖父等等。
+
+通过 jQuery，您能够向上遍历 DOM 树，以查找元素的祖先。
+
+### 向上遍历 DOM 树
+
+这些 jQuery 方法很有用，它们用于向上遍历 DOM 树：
+
+- parent()
+- parents()
+- parentsUntil()
+
+### jQuery parent() 方法
+
+parent() 方法返回被选元素的直接父元素。
+
+该方法只会向上一级对 DOM 树进行遍历。
+
+下面的例子返回每个 <span> 元素的的直接父元素：
+
+**实例**
+
 ```
-
-【案例：京东搜索.html】
-
-## html方法与text方法
-
-> html方法相当于innerHTML  text方法相当于innerText
-
-```javascript
-//设置内容
-$(“div”).html(“<span>这是一段内容</span>”);
-//获取内容
-$(“div”).html()
-
-//设置内容
-$(“div”).text(“<span>这是一段内容</span>”);
-//获取内容
-$(“div”).text()
-```
-
-区别：html方法会识别html标签，text方法会那内容直接当成字符串，并不会识别html标签。
-
-## width方法与height方法
-
-> 设置或者获取高度
-
-```javascript
-//带参数表示设置高度
-$(“img”).height(200);
-//不带参数获取高度
-$(“img”).height();
-
-```
-
-获取网页的可视区宽高
-
-```javascript
-//获取可视区宽度
-$(window).width();
-//获取可视区高度
-$(window).height();
-```
-
-## scrollTop与scrollLeft
-
-> 设置或者获取垂直滚动条的位置
-
-```javascript
-//获取页面被卷曲的高度
-$(window).scrollTop();
-//获取页面被卷曲的宽度
-$(window).scrollLeft();
-```
-
-【案例：仿腾讯固定菜单栏案例】
-【案例：小火箭返航案例】
-
-## offset方法与position方法
-
-> offset方法获取元素距离document的位置，position方法获取的是元素距离有定位的父元素的位置。
-
-```javascript
-//获取元素距离document的位置,返回值为对象：{left:100, top:100}
-$(selector).offset();
-//获取相对于其最近的有定位的父元素的位置。
-$(selector).position();
-```
-
-# jQuery事件机制
-
-> JavaScript中已经学习过了事件，但是jQuery对JavaScript事件进行了封装，增加并扩展了事件处理机制。jQuery不仅提供了更加优雅的事件处理语法，而且极大的增强了事件的处理能力。
-
-## jQuery事件发展历程(了解)
-
-简单事件绑定>>bind事件绑定>>delegate事件绑定>>on事件绑定(推荐)
-
-> 简单事件注册
-
-```javascript
-click(handler)			单击事件
-mouseenter(handler)		鼠标进入事件
-mouseleave(handler)		鼠标离开事件
-```
-
-缺点：不能同时注册多个事件
-
-> bind方式注册事件
-
-```javascript
-//第一个参数：事件类型
-//第二个参数：事件处理程序
-$("p").bind("click mouseenter", function(){
-    //事件响应方法
+$(document).ready(function(){
+  $("span").parent();
 });
 ```
 
-缺点：不支持动态事件绑定
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_parent)
 
-> delegate注册委托事件
+### jQuery parents() 方法
 
-```javascript
-// 第一个参数：selector，要绑定事件的元素
-// 第二个参数：事件类型
-// 第三个参数：事件处理函数
-$(".parentBox").delegate("p", "click", function(){
-    //为 .parentBox下面的所有的p标签绑定事件
+parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)。
+
+下面的例子返回所有 <span> 元素的所有祖先：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("span").parents();
 });
 ```
 
-缺点：只能注册委托事件，因此注册时间需要记得方法太多了
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_parents)
 
-> on注册事件
+您也可以使用可选参数来过滤对祖先元素的搜索。
 
-## on注册事件(重点)
+下面的例子返回所有 <span> 元素的所有祖先，并且它是 <ul> 元素：
 
-> jQuery1.7之后，jQuery用on统一了所有事件的处理方法。
->
-> 最现代的方式，兼容zepto(移动端类似jQuery的一个库)，强烈建议使用。
-
-on注册简单事件
-
-```javascript
-// 表示给$(selector)绑定事件，并且由自己触发，不支持动态绑定。
-$(selector).on( "click", function() {});
-```
-
-on注册委托事件
-
-```javascript
-// 表示给$(selector)绑定代理事件，当必须是它的内部元素span才能触发这个事件，支持动态绑定
-$(selector).on( "click",“span”, function() {});
+**实例**
 
 ```
-
-on注册事件的语法：
-
-```javascript
-// 第一个参数：events，绑定事件的名称可以是由空格分隔的多个事件（标准事件或者自定义事件）
-// 第二个参数：selector, 执行事件的后代元素（可选），如果没有后代元素，那么事件将有自己执行。
-// 第三个参数：data，传递给处理函数的数据，事件触发的时候通过event.data来使用（不常使用）
-// 第四个参数：handler，事件处理函数
-$(selector).on(events[,selector][,data],handler);
-
+$(document).ready(function(){
+  $("span").parents("ul");
+});
 ```
 
-## 事件解绑
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_parents2)
 
-> unbind方式（不用）
+### jQuery parentsUntil() 方法
 
-```javascript
-$(selector).unbind(); //解绑所有的事件
-$(selector).unbind("click"); //解绑指定的事件
-```
+parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。
 
-> undelegate方式（不用）
+下面的例子返回介于 <span> 与 <div> 元素之间的所有祖先元素：
 
-```javascript
-$( selector ).undelegate(); //解绑所有的delegate事件
-$( selector).undelegate( “click” ); //解绑所有的click事件
+**实例**
 
 ```
-
-> off方式（推荐）
-
-```javascript
-// 解绑匹配元素的所有事件
-$(selector).off();
-// 解绑匹配元素的所有click事件
-$(selector).off("click");
+$(document).ready(function(){
+  $("span").parentsUntil("div");
+});
 ```
 
-## 触发事件
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_parentsuntil)
 
-```javascript
-$(selector).click(); //触发 click事件
-$(selector).trigger("click");
-```
+## 遍历 - 后代
 
-## jQuery事件对象
+- [jQuery 祖先](http://www.w3school.com.cn/jquery/jquery_traversing_ancestors.asp)
+- [jQuery 同胞](http://www.w3school.com.cn/jquery/jquery_traversing_siblings.asp)
 
-jQuery事件对象其实就是js事件对象的一个封装，处理了兼容性。
+后代是子、孙、曾孙等等。
 
-```javascript
-//screenX和screenY	对应屏幕最左上角的值
-//clientX和clientY	距离页面左上角的位置（忽视滚动条）
-//pageX和pageY	距离页面最顶部的左上角的位置（会计算滚动条的距离）
+通过 jQuery，您能够向下遍历 DOM 树，以查找元素的后代。
 
-//event.keyCode	按下的键盘代码
-//event.data	存储绑定事件时传递的附加数据
+### 向下遍历 DOM 树
 
-//event.stopPropagation()	阻止事件冒泡行为
-//event.preventDefault()	阻止浏览器默认行为
-//return false:既能阻止事件冒泡，又能阻止浏览器默认行为。
-```
+下面是两个用于向下遍历 DOM 树的 jQuery 方法：
 
-【案例：钢琴版导航（加强）.html】
+- children()
+- find()
 
-# jQuery补充知识点
+### jQuery children() 方法
 
-## 链式编程
+children() 方法返回被选元素的所有直接子元素。
 
-> 通常情况下，只有设置操作才能把链式编程延续下去。因为获取操作的时候，会返回获取到的相应的值，无法返回 jQuery对象。
+该方法只会向下一级对 DOM 树进行遍历。
 
-```javascript
-end(); // 筛选选择器会改变jQuery对象的DOM对象，想要回复到上一次的状态，并且返回匹配元素之前的状态。
-```
+下面的例子返回每个 <div> 元素的所有直接子元素：
 
-【案例：五角星评分案例.html】
-
-## each方法
-
-> jQuery的隐式迭代会对所有的DOM对象设置相同的值，但是如果我们需要给每一个对象设置不同的值的时候，就需要自己进行迭代了。
-
-作用：遍历jQuery对象集合，为每个匹配的元素执行一个函数
-
-```javascript
-// 参数一表示当前元素在所有匹配元素中的索引号
-// 参数二表示当前元素（DOM对象）
-$(selector).each(function(index,element){});
-```
-
-【案例：不同的透明度.html】
-
-## 多库共存
-
-> jQuery使用$作为标示符，但是如果与其他框架中的$冲突时，jQuery可以释放$符的控制权.
-
-```javascript
-var c = $.noConflict();//释放$的控制权,并且把$的能力给了c
-```
-
-
-
-# 插件
-
-## 常用插件
-
-> 插件：jquery不可能包含所有的功能，我们可以通过插件扩展jquery的功能。
->
-> jQuery有着丰富的插件，使用这些插件能给jQuery提供一些额外的功能。
-
-### jquery.color.js
-
-> animate不支持颜色的渐变，但是使用了jquery.color.js后，就可以支持颜色的渐变了。
-
-使用插件的步骤
-
-```javascript
-1. 引入jQuery文件
-2. 引入插件（如果有用到css的话，需要引入css）
-3. 使用插件
+**实例**
 
 ```
-
-### jquery.lazyload.js
-
-懒加载插件
-
-### jquery.ui.js插件
-
-jQueryUI专指由jQuery官方维护的UI方向的插件。
-
-官方API：[http://api.jqueryui.com/category/all/](http://api.jqueryui.com/category/all/)
-
-其他教程：[jQueryUI教程](http://www.runoob.com/jqueryui/jqueryui-tutorial.html)
-
-基本使用:
-
-```javascript
-2.	1.	引入jQueryUI的样式文件
-2.	引入jQuery
-3.	引入jQueryUI的js文件
-4.	使用jQueryUI功能
+$(document).ready(function(){
+  $("div").children();
+});
 ```
 
-使用jquery.ui.js实现新闻模块的案例
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_children)
 
-## 制作jquery插件
+您也可以使用可选参数来过滤对子元素的搜索。
 
-> 原理：jquery插件其实说白了就是给jquery对象增加一个新的方法，让jquery对象拥有某一个功能。
+下面的例子返回类名为 "1" 的所有 <p> 元素，并且它们是 <div> 的直接子元素：
 
-```javascript
-//通过给$.fn添加方法就能够扩展jquery对象
-$.fn. pluginName = function() {};
+**实例**
+
+```
+$(document).ready(function(){
+  $("div").children("p.1");
+});
 ```
 
-制作手风琴插件
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_children2)
+
+### jQuery find() 方法
+
+find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。
+
+下面的例子返回属于 <div> 后代的所有 <span> 元素：
+
+实例
+
+```
+$(document).ready(function(){
+  $("div").find("span");
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_find)
+
+下面的例子返回 <div> 的所有后代：
+
+实例
+
+```
+$(document).ready(function(){
+  $("div").find("*");
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_find2)
+
+## 遍历 - 同胞
+
+同胞拥有相同的父元素。
+
+通过 jQuery，您能够在 DOM 树中遍历元素的同胞元素。
+
+### 在 **DOM** 树中水平遍历
+
+有许多有用的方法让我们在 DOM 树进行水平遍历：
+
+- siblings()
+- next()
+- nextAll()
+- nextUntil()
+- prev()
+- prevAll()
+- prevUntil()
+
+### jQuery siblings() 方法
+
+siblings() 方法返回被选元素的所有同胞元素。
+
+下面的例子返回 <h2> 的所有同胞元素：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("h2").siblings();
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_siblings)
+
+您也可以使用可选参数来过滤对同胞元素的搜索。
+
+下面的例子返回属于 <h2> 的同胞元素的所有 <p> 元素：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("h2").siblings("p");
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_siblings2)
+
+### jQuery next() 方法
+
+next() 方法返回被选元素的下一个同胞元素。
+
+该方法只返回一个元素。
+
+下面的例子返回 <h2> 的下一个同胞元素：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("h2").next();
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_next)
+
+### jQuery nextAll() 方法
+
+nextAll() 方法返回被选元素的所有跟随的同胞元素。
+
+下面的例子返回 <h2> 的所有跟随的同胞元素：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("h2").nextAll();
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_nextall)
+
+### jQuery nextUntil() 方法
+
+nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素。
+
+下面的例子返回介于 <h2> 与 <h6> 元素之间的所有同胞元素：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("h2").nextUntil("h6");
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_nextuntil)
+
+### jQuery prev(), prevAll() & prevUntil() 方法
+
+prev(), prevAll() 以及 prevUntil() 方法的工作方式与上面的方法类似，只不过方向相反而已：它们返回的是前面的同胞元素（在 DOM 树中沿着同胞元素向后遍历，而不是向前）。
+
+## 遍历 - 过滤
+
+### 缩写搜索元素的范围
+
+三个最基本的过滤方法是：first(), last() 和 eq()，它们允许您基于其在一组元素中的位置来选择一个特定的元素。
+
+其他过滤方法，比如 filter() 和 not() 允许您选取匹配或不匹配某项指定标准的元素。
+
+### jQuery first() 方法
+
+first() 方法返回被选元素的首个元素。
+
+下面的例子选取首个 <div> 元素内部的第一个 <p> 元素：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("div p").first();
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_first)
+
+### jQuery last() 方法
+
+last() 方法返回被选元素的最后一个元素。
+
+下面的例子选择最后一个 <div> 元素中的最后一个 <p> 元素：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("div p").last();
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_last)
+
+### jQuery eq() 方法
+
+eq() 方法返回被选元素中带有指定索引号的元素。
+
+索引号从 0 开始，因此首个元素的索引号是 0 而不是 1。下面的例子选取第二个 <p> 元素（索引号 1）：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("p").eq(1);
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_eq)
+
+### jQuery filter() 方法
+
+filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。
+
+下面的例子返回带有类名 "intro" 的所有 <p> 元素：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("p").filter(".intro");
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_filter)
+
+### jQuery not() 方法
+
+not() 方法返回不匹配标准的所有元素。
+
+提示：not() 方法与 filter() 相反。
+
+下面的例子返回不带有类名 "intro" 的所有 <p> 元素：
+
+**实例**
+
+```
+$(document).ready(function(){
+  $("p").not(".intro");
+});
+```
+
+[亲自试一试](http://www.w3school.com.cn/tiy/t.asp?f=jquery_not)
+
+### jQuery 遍历参考手册
+
+如需了解所有的 jQuery 遍历方法，请访问我们的 [jQuery 遍历参考手册](http://www.w3school.com.cn/jquery/jquery_ref_traversing.asp)。
+
+
 
