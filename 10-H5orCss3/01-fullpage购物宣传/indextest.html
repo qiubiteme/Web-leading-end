@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/jquery.fullpage.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div id="dowebok">
+    <div class="section">
+        <h3>第一屏</h3>
+    </div>
+    <div class="section">
+        <h3>第二屏</h3>
+    </div>
+    <div class="section">
+        <h3>第三屏</h3>
+    </div>
+    <div class="section">
+        <h3>第四屏</h3>
+    </div>
+    <div class="section">
+        <h3>第四屏</h3>
+    </div>
+    <div class="section">
+        <h3>第四屏</h3>
+    </div>
+    <div class="section">
+        <h3>第四屏</h3>
+    </div>
+    <div class="section">
+        <h3>第四屏</h3>
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullpage.js"></script>
+<script>
+    $(function () {
+        $('#dowebok').fullpage({
+            sectionsColor: ["#fadd67", "#84a2d4", "#ef674d", "#ffeedd", "#d04759", "#84d9ed", "#8ac060"],
+            verticalCentered: false,
+            navigation: true,
+        });
+
+
+    })
+</script>
+</html>
