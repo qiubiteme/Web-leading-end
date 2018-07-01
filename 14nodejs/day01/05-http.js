@@ -9,7 +9,6 @@ var http = require('http');
 // 2. 使用 http.createServer() 方法创建一个 Web 服务器
 //    返回一个 Server 实例
 var server = http.createServer();
-
 // 3. 服务器要干嘛？
 //    提供服务：对 数据的服务
 //    发请求

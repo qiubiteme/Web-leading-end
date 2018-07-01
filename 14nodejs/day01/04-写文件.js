@@ -3,7 +3,7 @@ var fs = require('fs');
 // $.ajax({
 //   ...
 //   success: function (data) {
-    
+
 //   }
 // })
 
@@ -19,11 +19,18 @@ var fs = require('fs');
 //      文件写入失败
 //      error 就是错误对象
 fs.writeFile('./data/你好.md', '大家好，给大家介绍一下，我是Node.js', function (error) {
-  // console.log('文件写入成功')
-  // console.log(error)
-  if (error) {
-    console.log('写入失败')
-  } else {
-    console.log('写入成功了')
-  }
+    // console.log('文件写入成功')
+    // console.log(error)
+    if (error) {
+        console.log('写入失败')
+    } else {
+        console.log('写入成功了')
+    }
+});
+fs.writeFile('./data/word.txt', 'node js 写文件', function (error) {
+    if (error) {
+        console.log('写入失败')
+    } else {
+        console.log('写入成功了')
+    }
 });

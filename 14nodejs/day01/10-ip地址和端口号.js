@@ -15,5 +15,5 @@ server.on('request', function (req, res) {
 });
 
 server.listen(5000, function () {
-  console.log('服务器启动成功，可以访问了。。。')
+  console.log('服务器启动成功，可以通过 http://127.0.0.1:5000/ 来进行访问')
 });
