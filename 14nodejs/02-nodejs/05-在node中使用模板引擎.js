@@ -40,23 +40,23 @@ var fs = require('fs');
 // `
 
 fs.readFile('./tpl.html', function (err, data) {
-  if (err) {
-    return console.log('读取文件失败了')
-  }
-  // 默认读取到的 data 是二进制数据
-  // 而模板引擎的 render 方法需要接收的是字符串
-  // 所以我们在这里需要把 data 二进制数据转为 字符串 才可以给模板引擎使用
-  var ret = template.render(data.toString(), {
-    name: 'Jack',
-    age: 18,
-    province: '北京市',
-    hobbies: [
-      '写代码',
-      '唱歌',
-      '打游戏'
-    ],
-    title: '个人信息'
-  });
+    if (err) {
+        return console.log('读取文件失败了')
+    }
+    // 默认读取到的 data 是二进制数据
+    // 而模板引擎的 render 方法需要接收的是字符串
+    // 所以我们在这里需要把 data 二进制数据转为 字符串 才可以给模板引擎使用
+    var ret = template.render(data.toString(), {
+        name: 'Jack',
+        age: 18,
+        province: '北京市',
+        hobbies: [
+            '写代码',
+            '唱歌',
+            '打游戏'
+        ],
+        title: '个人信息'
+    });
 
-  console.log(ret)
+    console.log(ret)
 });

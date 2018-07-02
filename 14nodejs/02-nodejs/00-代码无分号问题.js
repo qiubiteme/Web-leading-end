@@ -1,12 +1,12 @@
 function say() {
-  console.log('hello world')
+    console.log('hello world')
 }
 
 // TypeError: say(...) is not a function
 say()
 
 ;(function () {
-  console.log('hello')
+    console.log('hello')
 })()
 
 // ;['苹果', '香蕉'].forEach(function (item) {
