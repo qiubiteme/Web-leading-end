@@ -9,6 +9,39 @@ const bodyParser = require('koa-bodyparser');
 
 // 创建一个Koa对象表示web app本身:
 const app = new Koa();
+const fs = require('fs');
+// 先导入fs模块，然后用readdirSync列出文件
+// 这里可以用sync是因为启动时只运行一次，不存在性能问题:
+var files = fs.readdirSync(__dirname + '/controllers');
+
+// 过滤出.js文件:
+var js_files = files.filter((f) => {
+    return f.endsWith('.js');
+});
+
+// 处理每个js文件:
+for (var f of js_files) {
+    console.log(`process controller: ${f}...`);
+    // 导入js文件:
+    let mapping = require(__dirname + '/controllers/' + f);
+    for (var url in mapping) {
+        if (url.startsWith('GET ')) {
+            // 如果url类似"GET xxx":
+            var path = url.substring(4);
+            router.get(path, mapping[url]);
+            console.log(`register URL mapping: GET ${path}`);
+        } else if (url.startsWith('POST ')) {
+            // 如果url类似"POST xxx":
+            var path = url.substring(5);
+            router.post(path, mapping[url]);
+            console.log(`register URL mapping: POST ${path}`);
+        } else {
+            // 无效的URL:
+            console.log(`invalid URL: ${url}`);
+        }
+    }
+}
+
 
 //打印请求的url地址
 app.use(async (ctx, next) => {
@@ -24,29 +57,6 @@ app.use(async (ctx, next) => {
     console.log(`Time: ${ms}ms`); // 打印耗费时间
 });
 
-//默认的get请求
-router.get('/', async (ctx, next) => {
-    ctx.response.body = `<h1>Index</h1>
-        <form action="/signin" method="post">
-            <p>Name: <input name="name" value="koa"></p>
-            <p>Password: <input name="password" type="password"></p>
-            <p><input type="submit" value="提交"></p>
-        </form>`;
-});
-
-//接收post请求
-router.post('/signin', async (ctx, next) => {
-    var name = ctx.request.body.name || '';
-    var password = ctx.request.body.password || '';
-    console.log(`signin with name: ${name}, password: ${password}`);
-    //测试提交账号密码
-    if (name === 'koa' && password === '12345') {
-        ctx.response.body = `<h1>Welcome, ${name}!</h1>`;
-    } else {
-        ctx.response.body = `<h1>Login failed!</h1>
-        <p><a href="/">Try again</a></p>`;
-    }
-});
 
 // add 用于绑定ctx.request.body数据,处理
 app.use(bodyParser());
