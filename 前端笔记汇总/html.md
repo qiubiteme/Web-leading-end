@@ -13,30 +13,6 @@
 typora-copy-images-to: media
 ---
 
-# 自我介绍
-
-传智讲师   刘晓强     江湖人称  强哥  
-
-但是不是
-
-<img src="media/qq.jpg" />
-
-
-
-也不是：
-
-<img src="media/lk.jpg" />
-
-其实这是我：
-
-
-
-<img src="media/gt.jpg" />
-
-
-
-
-
 前端基础  html +css    基础班        html 2 +css  7天    9 天 传统布局    +  3天 html 5 +css3 基础
 
 就业班   js     移动web       php + 项目  15      node      vue     框架  微信 ...  大前端    
@@ -97,7 +73,7 @@ typora-copy-images-to: media
 
 ## Photoshop(协助)
 
-![1498465020015](../html笔记/media/1498465020015.png)
+![1498465020015](media/1498465020015.png)
 
 PS 工具是我们使用频率比较高的软件之一， 我们学习PS目的不是为了设计海报做电商和UI的，而是要求：
 
@@ -850,7 +826,7 @@ D < a src=" #show">跳转</a>
 
 1.**在下面结构中，哪种写法可以在index页面中有输出img.gif**
 
-![1512226080266](../html笔记/media/1512226080266.png)
+![1512226080266](media/1512226080266.png)
 
 (A) <img src=”../image/img.gif” /> 		
 
@@ -864,7 +840,7 @@ D < a src=" #show">跳转</a>
 
 **2在下面结构中，哪种写法可以在index页面中有输出1.jpg**
 
-![1512226099480](../html笔记/media/1512226099480.png)
+![1512226099480](media/1512226099480.png)
 
 (A) <img src=”../1/2/1.jpg” />		
 
@@ -878,7 +854,7 @@ D < a src=" #show">跳转</a>
 
 3在下面结构中哪种写法可以在index页面中有输出img.gif
 
-![1512226121609](../html笔记/media/1512226121609.png)
+![1512226121609](/media/1512226121609.png)
 
 (A) <img src=”demo/image/img.gif” /> 	
 

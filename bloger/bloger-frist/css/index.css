@@ -1,0 +1,17 @@
+.user-info,.classify,.release-time,.comment,.browse,.like{
+    font-family: icomoon;
+}
+/*文章样式*/
+.posts{
+    margin: 20px;
+}
+.posts-tags{
+    list-style: none;
+    display: inline-block;
+}
+.posts-tags li{
+    display: inline-block;
+}
+.posts .align-self-center{
+    width: 180px;
+}
